@@ -41,6 +41,18 @@
   #publicView .toolbar .date-control{width:100%;min-width:0;min-height:51px}
 }
 @media(max-width:400px){main.container{padding-left:18px;padding-right:18px}}
+
+/* SpeedGo calculator overflow fix */
+.form-cols{grid-template-columns:repeat(2,minmax(0,1fr))}
+.form-cols>.field{min-width:0}
+#publicView .two-col > .card:last-child{min-width:0}
+#publicView .two-col > .card:last-child .control{width:100%;max-width:100%;min-width:0}
+#publicView .two-col > .card:last-child select.control{display:block}
+@media(max-width:1100px){
+  #publicView .two-col > .card:last-child .form-cols{grid-template-columns:1fr}
+  #publicView .two-col > .card:last-child .calc-summary{flex-direction:column;align-items:flex-start;gap:10px}
+}
+
 </style>
 </head>
 <body>
