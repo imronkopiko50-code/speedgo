@@ -2,7 +2,7 @@
 <html lang="th">
 <head>
   <meta charset="UTF-8">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'none'; base-uri 'self'; form-action 'self'; object-src 'none'; script-src 'sha256-+YyX4JTPn4I33y2dgvd2A4KnEUKboQ7PpyeWeoZ8idI=' 'sha256-gL9ni6H5tuk2klUpeLV76fOz2/7479Q4sRUe66y4QgE=' https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self' data:; connect-src https://*.supabase.co wss://*.supabase.co https://cdn.jsdelivr.net">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'none'; base-uri 'self'; form-action 'self'; object-src 'none'; script-src 'sha256-+YyX4JTPn4I33y2dgvd2A4KnEUKboQ7PpyeWeoZ8idI=' 'sha256-i4iYK5LIHlpgwEg3UTdDGHFMSh6Nj2UN2cp3UfJe4i4=' https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self' data:; connect-src https://*.supabase.co wss://*.supabase.co https://cdn.jsdelivr.net">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#bd071b">
   <meta name="description" content="เช็กราคาน้ำมัน SpeedGo ประจำวัน ราคาล่าสุดของสถานีบริการ พร้อมประวัติราคาและคำนวณจำนวนลิตร">
@@ -53,6 +53,39 @@
   #publicView .two-col > .card:last-child .calc-summary{flex-direction:column;align-items:flex-start;gap:10px}
 }
 
+
+/* Market Advisor manager-only visual system */
+.market-panel{margin:18px 0 0;border-color:#eadde1;background:linear-gradient(135deg,#fff 0%,#fff9f9 100%)}
+.market-head{display:flex;justify-content:space-between;gap:12px;align-items:flex-start;flex-wrap:wrap}
+.market-head h3{margin:0;font-size:18px}
+.market-head p{margin:5px 0 0;font-size:12px;color:#817881;line-height:1.7}
+.market-metrics{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:17px 0}
+.market-metric{background:#fff;border:1px solid #efe5e9;border-radius:15px;padding:14px;min-width:0}
+.market-metric .metric-label{color:#8c818a;font-size:11px}
+.market-metric strong{display:block;font-size:23px;margin:5px 0;color:#971226;overflow-wrap:anywhere}
+.market-metric small{color:#817881;font-size:11px;line-height:1.65;display:block}
+.market-advice{font-size:12px;line-height:1.85;color:#796a72;margin:12px 0;background:#f9f5f6;padding:11px 13px;border-radius:11px}
+.market-warn{color:#a32935;background:#fff1f1;border:1px solid #ffcbd0}
+.market-actions{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:13px 0}
+.market-rules{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:14px 0}
+.rule-card{min-width:0;background:white;border:1px solid #ece8eb;border-radius:15px;padding:14px}
+.rule-header{font-weight:800;font-size:13px;margin-bottom:12px}
+.rule-fields{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:11px}
+.rule-fields .field{min-width:0}
+.rule-fields .field>label{font-size:11px;line-height:1.5;min-height:32px}
+.rule-fields .control{min-width:0;width:100%;font-size:16px}
+.market-rulebase{font-size:10px;color:#93818a;line-height:1.6;margin-top:9px}
+.market-table{width:100%;border-collapse:collapse;min-width:475px}
+.market-table th,.market-table td{text-align:left;padding:11px 9px;border-bottom:1px solid #f1ebee;font-size:12px}
+.market-table th{color:#8c808a;font-size:11px}
+.market-table td strong{color:#b8061d;font-size:16px}
+.market-table td small{display:block;color:#998a95;line-height:1.45}
+.market-note{color:#817881;font-size:11px;line-height:1.8}
+#marketStatus{min-width:0}
+@media(max-width:1100px){#publicView .two-col{grid-template-columns:minmax(0,1fr)}#publicView .two-col>.card{min-width:0}}
+@media(max-width:760px){.market-panel{padding:17px}.market-metrics{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.market-metric{padding:12px}.market-metric strong{font-size:20px}.market-metric:last-child{grid-column:1/-1}.market-rules{grid-template-columns:1fr}.market-head h3{font-size:17px}.market-actions .btn{white-space:normal}.rule-fields .field>label{min-height:0}}
+@media(max-width:400px){.rule-fields{grid-template-columns:1fr 1fr;gap:8px}.rule-card{padding:11px}.rule-fields .control{padding:10px 8px}}
+
 </style>
 </head>
 <body>
@@ -61,7 +94,7 @@
   <a class="brand" href="#" aria-label="SpeedGo FuelTrack"><div class="emblem">S</div><div><div class="brand-main">SpeedGo</div><div class="brand-sub">FUELTRACK</div></div></a>
   <div class="head-actions"><div class="mode-switch" aria-label="โหมดใช้งาน">
     <button id="publicMode" class="active" type="button">⛽ ดูราคาน้ำมัน</button>
-    <button id="staffMode" type="button">⚙ ผู้จัดการ</button>
+    <button id="staffMode" type="button">⚙ แอดมิน</button>
   </div><button class="btn btn-quiet top-signout hide" id="signoutBtn" type="button">ออกจากระบบ</button></div>
 </div></header>
 <main class="container">
@@ -81,9 +114,28 @@
     <section class="card" style="margin-top:18px"><div class="row-between"><div><h3 class="panel-title">ประวัติราคาประกาศ</h3><p class="panel-sub">ดูราคาย้อนหลังได้</p></div><span class="pill green">ประกาศแล้ว</span></div><div class="table-scroll" style="margin-top:13px"><table class="history"><thead><tr><th>วันที่มีผล</th><th>สรุปราคา</th><th>อัปเดตเมื่อ</th></tr></thead><tbody id="publicHistory"></tbody></table></div></section>
   </section>
   <section id="staffView" class="hide">
-    <div class="toolbar"><div><h2>จัดการราคาน้ำมัน</h2><p>เฉพาะผู้จัดการ · กำหนดราคา · บันทึกร่าง · ประกาศ · ตรวจสอบประวัติ</p></div><div class="tools"><button class="btn" id="signoutInlineBtn" type="button">ออกจากระบบ</button></div></div>
-    <div class="rolestrip"><span class="role-chip" id="staffIdentity">—</span><span class="role-chip" id="staffRole">สิทธิ์ผู้จัดการ</span></div>
-    <div class="notice-red" style="margin-top:12px">ผู้จัดการเป็นคนเดียวที่แก้ไข บันทึกร่าง และประกาศราคาได้ ลูกค้าเห็นเฉพาะราคาที่ประกาศแล้ว</div>
+    <div class="toolbar"><div><h2>จัดการราคาน้ำมัน</h2><p>เฉพาะแอดมิน · กำหนดราคา · บันทึกร่าง · ประกาศ · ตรวจสอบประวัติ</p></div><div class="tools"><button class="btn" id="signoutInlineBtn" type="button">ออกจากระบบ</button></div></div>
+    <div class="rolestrip"><span class="role-chip" id="staffIdentity">—</span><span class="role-chip" id="staffRole">สิทธิ์แอดมิน</span></div>
+    <div class="notice-red" style="margin-top:12px">แอดมินทั้ง 2 บัญชีสามารถแก้ไข บันทึกร่าง และประกาศราคาได้ ลูกค้าเห็นเฉพาะราคาที่ประกาศแล้ว</div>
+
+    <section class="card market-panel" id="marketAdvisor">
+      <div class="market-head"><div><h3>🌍 วิเคราะห์ราคาตลาดโลกและต้นทุน</h3><p>ระบบช่วยคำนวณราคาแนะนำสำหรับแอดมิน — ไม่เปลี่ยนราคาลูกค้าโดยอัตโนมัติ</p></div><span class="pill grey">ADMIN × 2</span></div>
+      <div class="market-metrics">
+        <div class="market-metric"><span class="metric-label">Brent spot · USD/บาร์เรล</span><strong id="brentSpot">—</strong><small id="brentDate">แหล่งข้อมูล: U.S. EIA</small></div>
+        <div class="market-metric"><span class="metric-label">อัตราแลกเปลี่ยน USD/THB</span><strong id="marketFx">—</strong><small id="fxDate">แหล่งข้อมูล: Frankfurter</small></div>
+        <div class="market-metric"><span class="metric-label">สถานะข้อมูลตลาด</span><strong id="marketFreshness" style="font-size:17px">ยังไม่มีข้อมูล</strong><small id="marketFetched">กรุณากดโหลดข้อมูลล่าสุด</small></div>
+      </div>
+      <div class="market-actions"><button type="button" class="btn btn-dark" id="refreshMarketBtn">↻ โหลดข้อมูลตลาดล่าสุด</button><span class="muted small" id="marketStatus" role="status" aria-live="polite">ใช้ข้อมูล Brent ณ วันรายงาน ไม่ใช่ราคาเรียลไทม์</span></div>
+      <div class="market-advice" id="marketNotice">เริ่มจากโหลดราคาตลาด จากนั้นกรอกต้นทุนจริงของแต่ละประเภท ราคาที่คำนวณเป็นเพียงข้อมูลช่วยตัดสินใจ</div>
+      <div class="row-between" style="flex-wrap:wrap;gap:10px;margin-top:19px"><div><h3 class="panel-title">กำหนดต้นทุนและเป้าหมาย</h3><p class="panel-sub">ราคาซื้อที่อ้างอิง ณ วันที่ตั้งฐาน + ค่าใช้จ่ายเพิ่มเติม + กำไรเป้าหมาย</p></div></div>
+      <div id="marketRules" class="market-rules"></div>
+      <div class="market-actions"><button type="button" class="btn btn-ghost" id="saveRulesBtn">บันทึกต้นทุนและสูตร</button><button type="button" class="btn" id="rebaseRulesBtn">ตั้งฐานตลาดใหม่</button><span id="ruleSaveState" class="muted small"></span></div>
+      <div class="market-advice">สูตรราคาแนะนำ = ต้นทุนซื้อ ณ วันที่ตั้งฐาน + ค่าใช้จ่ายเพิ่มเติม + กำไรเป้าหมาย + [(Brent ล่าสุด × USD/THB ล่าสุด − Brent ฐาน × USD/THB ฐาน) ÷ 158.987] × ค่าน้ำหนัก (0–1.5) ทั้งหมดเป็นบาท/ลิตร ต้นทุนซื้อต้องรวมภาษี/ค่าธรรมเนียมที่เกิดขึ้นแล้ว ส่วนค่าใช้จ่ายเพิ่มเติมให้ใส่เฉพาะที่ยังไม่รวม เพื่อเลี่ยงนับซ้ำ สูตรนี้เป็นการประมาณ ไม่ใช่ราคาน้ำมันสำเร็จรูปสิงคโปร์หรือราคาตลาดหน้าปั๊ม</div>
+      <div class="row-between" style="flex-wrap:wrap;gap:10px;margin-top:18px"><div><h3 class="panel-title">ราคาที่ระบบแนะนำ</h3><p class="panel-sub">เทียบกับราคาประกาศล่าสุด ณ วันที่กำลังแก้ไข</p></div><span class="pill grey" id="marketSuggestionCount">ยังไม่คำนวณ</span></div>
+      <div class="table-scroll"><table class="market-table"><thead><tr><th>ประเภทน้ำมัน</th><th>ราคาแนะนำ (฿/ลิตร)</th><th>เทียบราคาประกาศ</th></tr></thead><tbody id="marketSuggestions"><tr><td colspan="3" class="muted">ต้องตั้งค่าต้นทุนและโหลดข้อมูลตลาดก่อน</td></tr></tbody></table></div>
+      <div class="market-actions"><button class="btn btn-red" type="button" id="applyMarketBtn" disabled>นำราคาแนะนำไปยังตารางแก้ไข</button><span class="market-note">ต้องตรวจสอบราคาทุกครั้ง แล้วกด “บันทึกร่าง” หรือ “ยืนยันประกาศราคา” ด้วยตนเอง</span></div>
+    </section>
+
     <div class="staff-layout"><section class="card"><div class="row-between" style="flex-wrap:wrap"><div><h3 class="panel-title">ตั้งราคาประจำวัน</h3><p class="panel-sub">เลือกวันที่มีผล แล้วกรอกราคาน้ำมันที่จำหน่ายจริง</p></div><span class="pill" id="editState">—</span></div>
       <div class="form-cols manager-date"><div class="field"><label for="effectiveDate">วันที่มีผล (เวลาไทย)</label><input class="control" id="effectiveDate" type="date"></div></div>
       <div class="table-scroll" style="margin-top:16px"><table class="staff-table"><thead><tr><th>ประเภทน้ำมัน</th><th>ราคาใหม่ (฿/ลิตร)</th><th>เทียบราคาก่อนหน้า</th></tr></thead><tbody id="editRows"></tbody></table></div>
@@ -92,9 +144,9 @@
       <div class="tip">ราคาวันที่อนาคตจะยังไม่แสดงแก่ลูกค้าจนถึงวันที่มีผลตามเวลาไทย หากแก้ประกาศวันที่เดิม ระบบจะบันทึกเวอร์ชันและประวัติทุกครั้ง</div>
     </section><aside><div class="card"><div class="row-between"><h3 class="panel-title">ภาพรวมการประกาศ</h3><span class="pill grey" id="staffDateStatus">—</span></div><div class="calc-summary"><div><span>วันที่มีผล</span><div class="dashboard-date" id="staffSelectedDate">—</div></div><span style="font-size:30px">📅</span></div><p class="muted small" id="staffCurrentSummary" style="line-height:1.8;margin-top:15px">—</p><button class="btn btn-ghost" id="previewBtn" style="width:100%;margin-top:6px" type="button">ดูหน้าจอลูกค้า →</button></div><div class="card" style="margin-top:16px"><div class="row-between"><h3 class="panel-title">ประวัติการประกาศ</h3><span class="pill grey">Audit log</span></div><div class="audit-box" id="auditItems" style="margin-top:8px"></div></div></aside></div>
   </section>
-  <footer class="foot"><span><b>SpeedGo FuelTrack</b> · ราคากำหนดโดยผู้จัดการ</span><span>CLOUD · MANAGER ONLY</span></footer>
+  <footer class="foot"><span><b>SpeedGo FuelTrack</b> · ราคากำหนดโดยแอดมิน</span><span>CLOUD · ADMIN × 2</span></footer>
 </main>
-<div class="overlay hide" id="loginOverlay" role="dialog" aria-modal="true" aria-labelledby="loginTitle"><div class="dialog"><div class="row-between"><h2 id="loginTitle">เข้าสู่ระบบผู้จัดการ</h2><button type="button" class="btn btn-quiet" id="closeLoginBtn" aria-label="ปิด">✕</button></div><p>เฉพาะบัญชีผู้จัดการที่ได้รับสิทธิ์ใน Supabase เท่านั้น</p><form id="loginForm"><div class="field" style="margin:18px 0 12px"><label for="loginEmail">อีเมลผู้จัดการ</label><input type="email" class="control" id="loginEmail" autocomplete="username" required placeholder="manager@example.com"></div><div class="field"><label for="loginPassword">รหัสผ่าน</label><input type="password" class="control" id="loginPassword" autocomplete="current-password" required></div><p class="small" id="loginError" role="alert" style="color:#c50e24"></p><button class="btn btn-red" type="submit" style="width:100%;margin-top:10px">เข้าสู่ระบบผู้จัดการ</button></form></div></div>
+<div class="overlay hide" id="loginOverlay" role="dialog" aria-modal="true" aria-labelledby="loginTitle"><div class="dialog"><div class="row-between"><h2 id="loginTitle">เข้าสู่ระบบแอดมิน</h2><button type="button" class="btn btn-quiet" id="closeLoginBtn" aria-label="ปิด">✕</button></div><p>สำหรับแอดมิน SpeedGo 2 บัญชีที่ได้รับสิทธิ์ใน Supabase เท่านั้น</p><form id="loginForm"><div class="field" style="margin:18px 0 12px"><label for="loginEmail">อีเมลแอดมิน</label><input type="email" class="control" id="loginEmail" autocomplete="username" required placeholder="manager@example.com"></div><div class="field"><label for="loginPassword">รหัสผ่าน</label><input type="password" class="control" id="loginPassword" autocomplete="current-password" required></div><p class="small" id="loginError" role="alert" style="color:#c50e24"></p><button class="btn btn-red" type="submit" style="width:100%;margin-top:10px">เข้าสู่ระบบแอดมิน</button></form></div></div>
 <div class="toast" role="status" aria-live="polite" id="toast"></div>
 <script>// SpeedGo FuelTrack public client config — publishable key only.
 // NEVER place a Supabase secret/service_role key here.
@@ -165,14 +217,14 @@ const $ = id => document.getElementById(id);
 const today = () => bangkokToday();
 const pump = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 22V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v17M2 22h16M6 7h8v6H6z"/><path d="M17 8h2l3 4v7a2 2 0 0 1-4 0v-5"/></svg>`;
 const state = { db:null, user:null, manager:false, publications:[],drafts:[],audit:[],
-  publicDate:today(),managerDate:today(),view:'public',dirty:false,version:0,busy:false,ready:false,requestId:0 };
+  publicDate:today(),managerDate:today(),view:'public',dirty:false,rulesDirty:false,marketRules:[],marketSnapshot:null,marketError:'',marketLoading:false,version:0,busy:false,ready:false,requestId:0 };
 let toastTimer;
 function notify(msg){$('toast').textContent=String(msg);$('toast').classList.add('show');clearTimeout(toastTimer);toastTimer=setTimeout(()=>$('toast').classList.remove('show'),4800)}
 function setBusy(b){state.busy=b;$('loader').classList.toggle('on',b);$('saveDraftBtn').disabled=b||!state.manager;$('publishBtn').disabled=b||!state.manager}
 function check(result){if(result.error)throw result.error;return result.data}
-function message(error){const text=error?.message||String(error);if(/PRICE_CONFLICT|40001/.test(text))return 'ข้อมูลถูกปรับจากที่โหลดไว้ กรุณาโหลดหน้าใหม่ก่อนประกาศซ้ำ';if(/NOT_AUTHORIZED|42501/.test(text))return 'บัญชีนี้ไม่มีสิทธิ์ผู้จัดการ';if(/INVALID_|22023/.test(text))return 'ข้อมูลราคา วันที่ หรือหมายเหตุไม่ถูกต้อง';if(/Invalid login credentials/i.test(text))return 'อีเมลหรือรหัสผ่านไม่ถูกต้อง';return text}
+function message(error){const text=error?.message||String(error);if(/PRICE_CONFLICT|40001/.test(text))return 'ข้อมูลถูกปรับจากที่โหลดไว้ กรุณาโหลดหน้าใหม่ก่อนประกาศซ้ำ';if(/NOT_AUTHORIZED|42501/.test(text))return 'บัญชีนี้ไม่มีสิทธิ์แอดมิน';if(/INVALID_|22023/.test(text))return 'ข้อมูลราคา วันที่ หรือหมายเหตุไม่ถูกต้อง';if(/Invalid login credentials/i.test(text))return 'อีเมลหรือรหัสผ่านไม่ถูกต้อง';return text}
 function showError(text){$('appError').textContent=text||'';$('appError').classList.toggle('hide',!text);$('modeStatus').textContent=text?'เชื่อมต่อไม่สำเร็จ':'ข้อมูลออนไลน์ · อัปเดตอัตโนมัติทุก 30 วินาที';document.querySelector('.status-dot').classList.toggle('error',!!text);document.querySelector('.status-dot').classList.toggle('online',!text)}
-function requireDiscard(){return !state.dirty||confirm('คุณยังไม่ได้บันทึกการแก้ไข ยืนยันออกจากหน้านี้หรือไม่?')}
+function requireDiscard(){return !(state.dirty||state.rulesDirty)||confirm('คุณยังไม่ได้บันทึกการแก้ไขราคา/ต้นทุน ยืนยันออกจากหน้านี้หรือไม่?')}
 const publicRows = () => state.publications.filter(r=>r.effective_date<=today());
 const exact = day => state.publications.find(r=>r.effective_date===day);
 function differenceHtml(cur,prev){let d=difference(cur,prev);if(d==null)return '<span class="delta flat">ราคาเริ่มต้น</span>';if(d===0)return '<span class="delta flat">— 0.00</span>';return `<span class="delta ${d>0?'up':'down'}">${d>0?'▲ +':'▼ −'}${money(Math.abs(d))}</span>`}
@@ -197,18 +249,119 @@ function editor(){const draft=state.drafts.find(r=>r.effective_date===state.mana
 }
 function updateDiffs(){const prior=earlier(state.publications,state.managerDate);for(const input of $('editRows').querySelectorAll('[data-fuel]')){const id=input.dataset.fuel;document.querySelector(`[data-diff="${id}"]`).innerHTML=input.value.trim()&&Number.isFinite(Number(input.value))?differenceHtml(Number(input.value),prior?.prices?.[id]):'<span class="delta flat">—</span>'}}
 function renderAudit(){const logs=state.audit.slice(0,50);$('auditItems').innerHTML=logs.length?logs.map(r=>{const changes=FUELS.filter(f=>r.old_prices?.[f.id]!==r.new_prices?.[f.id]);const desc=changes.map(f=>`${f.name} ${r.old_prices?.[f.id]==null?'—':money(r.old_prices[f.id])} → ${r.new_prices?.[f.id]==null?'—':money(r.new_prices[f.id])}`).join(' · ');return `<article class="audit-item"><div class="audit-head"><strong>${formatDate(r.effective_date)} · v${r.publication_version}</strong><span class="muted small">${formatDateTime(r.changed_at)}</span></div><p>${esc(desc||'ปรับหมายเหตุ')}</p></article>`}).join(''):'<div class="empty">ยังไม่มีประวัติ</div>'}
-function renderManager(){if(state.view!=='manager')return;if(!state.manager){switchView('public');return}$('staffIdentity').textContent=state.user?.email||'ผู้จัดการ';$('staffRole').textContent='สิทธิ์ผู้จัดการ · แก้ไขและประกาศได้';$('heroMiniLabel').textContent='วันที่กำลังแก้ไข';$('heroMiniDate').textContent=formatDate(state.managerDate);$('heroMiniDesc').textContent='เฉพาะบัญชีผู้จัดการ';editor();renderAudit()}
+function renderManager(){if(state.view!=='manager')return;if(!state.manager){switchView('public');return}$('staffIdentity').textContent=state.user?.email||'แอดมิน';$('staffRole').textContent='สิทธิ์แอดมิน (2 บัญชี) · แก้ไขและประกาศได้';$('heroMiniLabel').textContent='วันที่กำลังแก้ไข';$('heroMiniDate').textContent=formatDate(state.managerDate);$('heroMiniDesc').textContent='เฉพาะบัญชีแอดมิน';editor();renderAudit();renderMarketAdvisor()}
 function formPrices(){const fields={};$('editRows').querySelectorAll('[data-fuel]').forEach(e=>fields[e.dataset.fuel]=e.value);return validatePrices(fields)}
 async function saveDraft(){if(state.busy||!state.manager)return;try{const prices=formPrices(),note=$('priceNote').value.trim();setBusy(true);check(await state.db.from('price_drafts').upsert({effective_date:state.managerDate,prices,note},{onConflict:'effective_date'}));state.dirty=false;await loadData();notify('บันทึกร่างเรียบร้อยแล้ว ยังไม่เผยแพร่แก่ลูกค้า')}catch(e){notify('บันทึกร่างไม่สำเร็จ: '+message(e))}finally{setBusy(false)}}
 async function publish(){if(state.busy||!state.manager)return;let prices;try{prices=formPrices()}catch(e){notify(message(e));return}const note=$('priceNote').value.trim();if(!confirm(`ยืนยันประกาศราคา SpeedGo\nวันที่มีผล: ${formatDate(state.managerDate)}\nประเภทน้ำมัน: ${Object.keys(prices).length} รายการ\n\n${state.managerDate>today()?'กำหนดราคาล่วงหน้า ลูกค้าจะเห็นเมื่อถึงวันที่มีผล':'ประกาศให้ลูกค้าเห็นในหน้าเว็บเมื่อมีผล'}\n\nยืนยันว่าตรวจสอบราคาถูกต้องแล้ว?`))return;
  try{setBusy(true);check(await state.db.rpc('publish_prices',{p_effective_date:state.managerDate,p_prices:prices,p_note:note,p_expected_version:state.version}));state.dirty=false;await loadData();notify('ประกาศราคาเรียบร้อยแล้ว พร้อมบันทึกประวัติ')}catch(e){notify('ประกาศไม่สำเร็จ: '+message(e))}finally{setBusy(false)}}
-async function loadData(){const request=++state.requestId;const pub=state.db.from('price_publications').select('effective_date,prices,note,version,published_at').order('effective_date',{ascending:false}).limit(1000);const draft=state.manager?state.db.from('price_drafts').select('effective_date,prices,note,updated_at').order('effective_date',{ascending:false}).limit(300):Promise.resolve({data:[],error:null});const audit=state.manager?state.db.from('price_audit').select('effective_date,old_prices,new_prices,publication_version,changed_at').order('changed_at',{ascending:false}).limit(100):Promise.resolve({data:[],error:null});const result=await Promise.all([pub,draft,audit]);if(request!==state.requestId)return;state.publications=check(result[0])||[];state.drafts=check(result[1])||[];state.audit=check(result[2])||[];showError('');if(state.view==='manager')renderManager();else renderPublic()}
+async function loadData(){
+  const request=++state.requestId;
+  const pub=state.db.from('price_publications').select('effective_date,prices,note,version,published_at').order('effective_date',{ascending:false}).limit(1000);
+  const draft=state.manager?state.db.from('price_drafts').select('effective_date,prices,note,updated_at').order('effective_date',{ascending:false}).limit(300):Promise.resolve({data:[],error:null});
+  const audit=state.manager?state.db.from('price_audit').select('effective_date,old_prices,new_prices,publication_version,changed_at').order('changed_at',{ascending:false}).limit(100):Promise.resolve({data:[],error:null});
+  const market=state.manager?state.db.from('market_snapshots').select('*').order('fetched_at',{ascending:false}).limit(1):Promise.resolve({data:[],error:null});
+  const rules=state.manager?state.db.from('price_cost_rules').select('*').order('fuel_id'):Promise.resolve({data:[],error:null});
+  const result=await Promise.all([pub,draft,audit,market,rules]);
+  if(request!==state.requestId)return;
+  state.publications=check(result[0])||[];
+  state.drafts=check(result[1])||[];
+  state.audit=check(result[2])||[];
+  state.marketError=result[3].error||result[4].error?'ยังไม่ได้ติดตั้ง 003_market_advisor.sql หรือไม่มีสิทธิ์อ่านข้อมูลตลาด':'';
+  if(!state.marketError){state.marketSnapshot=result[3].data?.[0]||null;state.marketRules=result[4].data||[]}
+  showError('');
+  if(state.view==='manager')renderManager();else renderPublic();
+}
+
+// Market Advisor: advisory calculations only, never publish from this panel.
+const BBL_TO_LITERS=158.987;
+function ageInDays(iso){if(!iso||!/^[0-9]{4}-[0-9]{2}-[0-9]{2}$/.test(iso))return Infinity;const [y,m,d]=iso.split('-').map(Number);const [ty,tm,td]=today().split('-').map(Number);return Math.floor((Date.UTC(ty,tm-1,td)-Date.UTC(y,m-1,d))/86400000)}
+function marketIsFresh(){const m=state.marketSnapshot;return !!m&&ageInDays(m.brent_date)<=10&&ageInDays(m.fx_date)<=7&&ageInDays(m.brent_date)>=0&&ageInDays(m.fx_date)>=0}
+function rulesValidNumber(v,min,max){return Number.isFinite(Number(v))&&String(v).trim()!==''&&Number(v)>=min&&Number(v)<=max}
+function marketSuggestion(fuel){
+  const r=state.marketRules.find(x=>x.fuel_id===fuel.id),m=state.marketSnapshot;
+  if(!r||!m)return null;
+  const delta=((Number(m.brent_usd_per_bbl)*Number(m.fx_thb_per_usd)-Number(r.anchor_brent)*Number(r.anchor_fx))/BBL_TO_LITERS)*Number(r.sensitivity);
+  const suggestion=Number(r.purchase_cost)+Number(r.operating_cost)+Number(r.target_margin)+delta;
+  if(!Number.isFinite(suggestion)||suggestion<.01||suggestion>200)return null;
+  const p=Math.round(suggestion*100)/100;
+  const effective=mostRecent(state.publications,state.managerDate)?.prices?.[fuel.id];
+  return {fuel,price:p,delta,previous:effective!=null?Number(effective):null,alert:Math.abs(delta)>3};
+}
+function renderMarketAdvisor(){
+  if(state.view!=='manager'||!state.manager)return;
+  const m=state.marketSnapshot;
+  $('brentSpot').textContent=m?Number(m.brent_usd_per_bbl).toFixed(2):'—';
+  $('marketFx').textContent=m?Number(m.fx_thb_per_usd).toFixed(4):'—';
+  $('brentDate').textContent=m?'EIA · ข้อมูล ณ '+formatDate(m.brent_date):'EIA · Brent Spot (RBRTE)';
+  $('fxDate').textContent=m?'Frankfurter · ข้อมูล ณ '+formatDate(m.fx_date):'Frankfurter · USD/THB';
+  $('marketFetched').textContent=m?'ดึงข้อมูลเมื่อ '+formatDateTime(m.fetched_at):'ยังไม่ได้บันทึกข้อมูลตลาด';
+  $('marketFreshness').textContent=!m?'ยังไม่มีข้อมูล':marketIsFresh()?'ใช้ประเมินได้':'ข้อมูลเก่า / ต้องตรวจสอบ';
+  $('marketFreshness').style.color=m&&!marketIsFresh()?'#bb2b31':'#16865a';
+  $('marketStatus').textContent=state.marketError||(!m?'ยังไม่ได้โหลดข้อมูลตลาด':`ราคาตลาด EIA เป็นข้อมูล spot ที่เผยแพร่ย้อนหลัง ไม่ใช่ราคาทันที`);
+  $('marketNotice').classList.toggle('market-warn',!!state.marketError||(!!m&&!marketIsFresh()));
+  $('marketNotice').textContent=state.marketError||(!m?'เริ่มต้น: กด “โหลดข้อมูลตลาดล่าสุด” แล้วกรอกต้นทุนซื้อจริงของแต่ละประเภท หากยังไม่มี EIA API Key ต้องตั้งค่าใน Supabase ก่อน':!marketIsFresh()?'ข้อมูลตลาดเกินช่วงที่กำหนด (Brent มากกว่า 10 วัน หรืออัตราแลกเปลี่ยนมากกว่า 7 วัน) ระบบจะไม่ให้นำราคาแนะนำไปใช้อัตโนมัติ ให้ตรวจสอบแหล่งข้อมูลก่อน':'ราคาที่แนะนำเป็นแบบจำลองจากต้นทุนที่กำหนดและการเปลี่ยนแปลงของ Brent/ค่าเงินเทียบกับวันตั้งฐาน ไม่ใช่ต้นทุนซื้อน้ำมันสำเร็จรูปจริง');
+  const rulesTarget=$('marketRules');
+  if(!state.rulesDirty){
+    rulesTarget.innerHTML=FUELS.map(f=>{const r=state.marketRules.find(x=>x.fuel_id===f.id);const v=(key,def='')=>r?.[key]??def;const anchor=r?`ฐานตลาด: Brent $${Number(r.anchor_brent).toFixed(2)} · USD/THB ${Number(r.anchor_fx).toFixed(4)}`:'ยังไม่ตั้งฐาน (ระบบจะใช้ข้อมูลตลาดล่าสุดเมื่อบันทึกครั้งแรก)';return `<div class="rule-card" data-rule="${f.id}"><div class="rule-header">${f.name}</div><div class="rule-fields"><div class="field"><label>ต้นทุนซื้อ ณ วันตั้งฐาน (฿/ลิตร)</label><input class="control" inputmode="decimal" type="number" min="0.01" max="190" step="0.01" data-param="purchase_cost" value="${v('purchase_cost')}"></div><div class="field"><label>ค่าใช้จ่ายเพิ่มเติม (฿/ลิตร)</label><input class="control" inputmode="decimal" type="number" min="0" max="100" step="0.01" data-param="operating_cost" value="${v('operating_cost',0)}"></div><div class="field"><label>กำไรเป้าหมาย (฿/ลิตร)</label><input class="control" inputmode="decimal" type="number" min="0" max="100" step="0.01" data-param="target_margin" value="${v('target_margin',0)}"></div><div class="field"><label>น้ำหนักตลาด (0–1.5)</label><input class="control" inputmode="decimal" type="number" min="0" max="1.5" step="0.05" data-param="sensitivity" value="${v('sensitivity',0.5)}"></div></div><div class="market-rulebase">${anchor}</div></div>`}).join('');
+    $('ruleSaveState').textContent='ต้นทุนที่ยังไม่กรอกจะไม่ถูกนำมาคำนวณ';
+  }
+  const suggestions=FUELS.map(marketSuggestion).filter(Boolean);
+  $('marketSuggestions').innerHTML=suggestions.length?suggestions.map(x=>`<tr><td>${x.fuel.name}<small>ผลกระทบจากตลาด ${x.delta>=0?'+':''}${x.delta.toFixed(2)} บาท/ลิตร</small></td><td><strong>${money(x.price)}</strong>${x.alert?'<small style="color:#bf2335">เปลี่ยนจากฐานมากกว่า 3 บาท: ตรวจสอบ</small>':''}</td><td>${x.previous===null?'ไม่มีราคาก่อนหน้า':`${x.price-x.previous>=0?'+':''}${money(x.price-x.previous)} บาท`}</td></tr>`).join(''):'<tr><td colspan="3" class="muted">ยังไม่มีราคาที่คำนวณได้ กรุณาบันทึกต้นทุนและโหลดข้อมูลตลาด</td></tr>';
+  $('marketSuggestionCount').textContent=suggestions.length+' ประเภท';
+  const usable=marketIsFresh()&&suggestions.length>0&&suggestions.every(s=>!s.alert)&&!state.rulesDirty;
+  $('applyMarketBtn').disabled=!usable;
+  $('applyMarketBtn').title=usable?'คัดลอกราคาเข้าตารางตั้งราคา ไม่ประกาศอัตโนมัติ':'ข้อมูลยังไม่ครบ/ไม่ใหม่พอ/มีการเปลี่ยนแปลงมากเกินไป หรือยังไม่ได้บันทึกต้นทุน';
+}
+async function refreshWorldMarket(){
+  if(state.marketLoading||!state.manager||state.busy)return;
+  state.marketLoading=true;$('refreshMarketBtn').disabled=true;$('marketStatus').textContent='กำลังดึงข้อมูล EIA และอัตราแลกเปลี่ยน…';
+  try{const {data,error}=await state.db.functions.invoke('speedgo-market-refresh',{body:{action:'refresh'}});
+    if(error)throw new Error('ไม่สามารถเรียก Edge Function ได้ กรุณาตรวจสอบการติดตั้งและ EIA_API_KEY');
+    if(!data?.ok||!data?.snapshot)throw new Error(data?.detail||data?.error||'ไม่พบข้อมูลตลาด');
+    state.marketSnapshot=data.snapshot;state.marketError='';renderMarketAdvisor();notify('โหลดข้อมูลตลาดและบันทึกใน Supabase สำเร็จ');
+  }catch(err){$('marketStatus').textContent='โหลดไม่สำเร็จ: '+message(err);notify('โหลดข้อมูลตลาดไม่สำเร็จ: '+message(err))}
+  finally{state.marketLoading=false;$('refreshMarketBtn').disabled=false}
+}
+async function saveMarketRules(rebase){
+  if(!state.manager||state.busy)return;
+  const m=state.marketSnapshot;
+  if(!m){notify('กรุณาโหลดข้อมูลตลาดก่อน เพื่อกำหนดฐานอ้างอิง');return}
+  if(!marketIsFresh()){notify('ข้อมูลตลาดเก่าเกินไป กรุณาโหลดและตรวจสอบข้อมูลใหม่');return}
+  if(rebase&&!confirm('ตั้งฐานตลาดใหม่สำหรับประเภทน้ำมันที่กรอกต้นทุนทั้งหมด?\nควรปรับ “ต้นทุนซื้อ ณ วันตั้งฐาน” ให้เป็นต้นทุนจริงปัจจุบันด้วย เพื่อป้องกันการนับผลต่างซ้ำ'))return;
+  const items=[];
+  try{
+    for(const el of $('marketRules').querySelectorAll('[data-rule]')){
+      const fuelId=el.dataset.rule;
+      const value=name=>el.querySelector(`[data-param="${name}"]`).value.trim();
+      const purchase=value('purchase_cost');if(purchase==='')continue;
+      const cost=value('operating_cost'),margin=value('target_margin'),weight=value('sensitivity');
+      if(!rulesValidNumber(purchase,.01,190)||!rulesValidNumber(cost,0,100)||!rulesValidNumber(margin,0,100)||!rulesValidNumber(weight,0,1.5))throw new Error(`กรุณาตรวจสอบต้นทุน/กำไร/น้ำหนัก ของ ${FUELS.find(f=>f.id===fuelId).name}`);
+      const previous=state.marketRules.find(x=>x.fuel_id===fuelId);
+      items.push({fuel_id:fuelId,purchase_cost:Number(purchase),operating_cost:Number(cost),target_margin:Number(margin),sensitivity:Number(weight),anchor_brent:rebase||!previous?Number(m.brent_usd_per_bbl):Number(previous.anchor_brent),anchor_fx:rebase||!previous?Number(m.fx_thb_per_usd):Number(previous.anchor_fx),updated_by:state.user.id});
+    }
+    if(!items.length){notify('กรุณากรอกต้นทุนซื้ออย่างน้อย 1 ประเภท');return}
+    if(!rebase&&!confirm('บันทึกต้นทุนและสูตร '+items.length+' ประเภท?\nราคาที่ลูกค้าเห็นจะไม่เปลี่ยนจนกว่าจะยืนยันประกาศ'))return;
+    setBusy(true);
+    const saved=check(await state.db.from('price_cost_rules').upsert(items,{onConflict:'fuel_id'}).select('*'));
+    state.marketRules=[...state.marketRules.filter(r=>!saved.some(x=>x.fuel_id===r.fuel_id)),...saved];
+    state.rulesDirty=false;renderMarketAdvisor();notify(rebase?'ตั้งฐานตลาดใหม่และบันทึกต้นทุนแล้ว':'บันทึกต้นทุนและสูตรเรียบร้อย');
+  }catch(err){notify('บันทึกต้นทุนไม่สำเร็จ: '+message(err))}finally{setBusy(false)}
+}
+function applyMarketPrices(){
+  const entries=FUELS.map(marketSuggestion).filter(Boolean);
+  if(!marketIsFresh()||!entries.length||entries.some(x=>x.alert)||state.rulesDirty){notify('กรุณาตรวจสอบข้อมูลตลาดและบันทึกต้นทุนก่อน');return}
+  if(!confirm(`นำราคาแนะนำ ${entries.length} ประเภท มาแทนราคาในตารางของวันที่ ${formatDate(state.managerDate)}?\n\nการกดครั้งนี้ยังไม่บันทึกหรือประกาศราคา ต้องตรวจสอบและยืนยันอีกครั้ง`))return;
+  for(const x of entries){const input=$('editRows').querySelector(`[data-fuel="${x.fuel.id}"]`);if(input)input.value=x.price.toFixed(2)}
+  state.dirty=true;updateDiffs();$('editRows').scrollIntoView({behavior:'smooth',block:'center'});
+  notify('คัดลอกราคาแนะนำเข้าตารางแล้ว กรุณาตรวจสอบก่อนบันทึกร่างหรือประกาศ');
+}
+
 function switchView(view){if(!requireDiscard())return;if(view==='manager'){if(!state.db){notify('ยังไม่ได้เชื่อมต่อฐานข้อมูล');return}if(!state.manager){$('loginOverlay').classList.remove('hide');$('loginEmail').focus();return}}
- state.view=view;state.dirty=false;$('staffView').classList.toggle('hide',view!=='manager');$('publicView').classList.toggle('hide',view!=='public');$('staffMode').classList.toggle('active',view==='manager');$('publicMode').classList.toggle('active',view==='public');$('signoutBtn').classList.toggle('hide',view!=='manager');$('heroTitle').innerHTML=view==='manager'?'จัดการราคาน้ำมัน<br>สำหรับผู้จัดการ SpeedGo':'ราคาน้ำมัน SpeedGo<br>วันนี้';$('heroDesc').textContent=view==='manager'?'ผู้จัดการกำหนดราคาและยืนยันประกาศได้โดยตรง ไม่ต้องผ่านการอนุมัติหรือเลือกสาขา':'เช็กราคาน้ำมันล่าสุดจากสถานีบริการ SpeedGo อัปเดตตามประกาศราคา เพื่อช่วยให้คุณวางแผนการเติมน้ำมันได้สะดวกยิ่งขึ้น';if(view==='manager')renderManager();else renderPublic();window.scrollTo({top:0,behavior:'smooth'})}
-async function login(event){event.preventDefault();if(state.busy)return;$('loginError').textContent='';try{setBusy(true);const auth=check(await state.db.auth.signInWithPassword({email:$('loginEmail').value.trim(),password:$('loginPassword').value}));state.user=auth.user;state.manager=check(await state.db.rpc('is_manager'))===true;if(!state.manager){await state.db.auth.signOut();state.user=null;throw new Error('บัญชีนี้ไม่ได้รับสิทธิ์ผู้จัดการ')}state.dirty=false;$('loginPassword').value='';$('loginOverlay').classList.add('hide');await loadData();switchView('manager')}catch(e){$('loginError').textContent=message(e)}finally{setBusy(false)}}
+ state.view=view;state.dirty=false;state.rulesDirty=false;$('staffView').classList.toggle('hide',view!=='manager');$('publicView').classList.toggle('hide',view!=='public');$('staffMode').classList.toggle('active',view==='manager');$('publicMode').classList.toggle('active',view==='public');$('signoutBtn').classList.toggle('hide',view!=='manager');$('heroTitle').innerHTML=view==='manager'?'จัดการราคาน้ำมัน<br>สำหรับแอดมิน SpeedGo':'ราคาน้ำมัน SpeedGo<br>วันนี้';$('heroDesc').textContent=view==='manager'?'แอดมินทั้ง 2 บัญชีแก้ไขและประกาศราคาได้โดยตรง โดยไม่มีระบบสาขา':'เช็กราคาน้ำมันล่าสุดจากสถานีบริการ SpeedGo อัปเดตตามประกาศราคา เพื่อช่วยให้คุณวางแผนการเติมน้ำมันได้สะดวกยิ่งขึ้น';if(view==='manager')renderManager();else renderPublic();window.scrollTo({top:0,behavior:'smooth'})}
+async function login(event){event.preventDefault();if(state.busy)return;$('loginError').textContent='';try{setBusy(true);const auth=check(await state.db.auth.signInWithPassword({email:$('loginEmail').value.trim(),password:$('loginPassword').value}));state.user=auth.user;state.manager=check(await state.db.rpc('is_manager'))===true;if(!state.manager){await state.db.auth.signOut();state.user=null;throw new Error('บัญชีนี้ไม่ได้รับสิทธิ์แอดมิน')}state.dirty=false;$('loginPassword').value='';$('loginOverlay').classList.add('hide');await loadData();switchView('manager')}catch(e){$('loginError').textContent=message(e)}finally{setBusy(false)}}
 async function logout(){if(!requireDiscard())return;try{setBusy(true);check(await state.db.auth.signOut());state.user=null;state.manager=false;state.drafts=[];state.audit=[];state.dirty=false;state.view='public';$('staffView').classList.add('hide');$('publicView').classList.remove('hide');$('staffMode').classList.remove('active');$('publicMode').classList.add('active');$('signoutBtn').classList.add('hide');$('heroTitle').innerHTML='ราคาน้ำมัน SpeedGo<br>วันนี้';await loadData();notify('ออกจากระบบเรียบร้อย')}catch(e){notify(message(e))}finally{setBusy(false)}}
 let refreshing=false;async function refresh(){if(!state.ready||!state.db||state.view!=='public'||refreshing)return;refreshing=true;try{await loadData()}catch(e){showError('ไม่สามารถอัปเดตราคาล่าสุด: '+message(e))}finally{refreshing=false}}
-function events(){$('publicMode').addEventListener('click',()=>switchView('public'));$('staffMode').addEventListener('click',()=>switchView('manager'));$('publicDate').addEventListener('change',e=>{state.publicDate=e.target.value&&e.target.value<=today()?e.target.value:today();renderPublic()});$('effectiveDate').addEventListener('change',e=>{if(!requireDiscard()){e.target.value=state.managerDate;return}const val=e.target.value;if(!val||val<'2020-01-01'||val>shiftDay(today(),366)){notify('วันที่อยู่นอกช่วงที่อนุญาต');e.target.value=state.managerDate;return}state.managerDate=val;renderManager()});$('calcAmount').addEventListener('input',calculate);$('calcFuel').addEventListener('change',calculate);$('priceNote').addEventListener('input',()=>state.dirty=true);$('saveDraftBtn').addEventListener('click',saveDraft);$('publishBtn').addEventListener('click',publish);$('copyPreviousBtn').addEventListener('click',()=>{const row=earlier(state.publications,state.managerDate);if(!row){notify('ยังไม่มีราคาก่อนหน้า');return}for(const fuel of FUELS)$('editRows').querySelector(`[data-fuel="${fuel.id}"]`).value=row.prices[fuel.id]??'';state.dirty=true;updateDiffs();notify('คัดลอกราคาก่อนหน้าแล้ว กรุณาตรวจสอบก่อนประกาศ')});$('previewBtn').addEventListener('click',()=>switchView('public'));$('signoutBtn').addEventListener('click',logout);$('signoutInlineBtn').addEventListener('click',logout);$('loginForm').addEventListener('submit',login);$('closeLoginBtn').addEventListener('click',()=>$('loginOverlay').classList.add('hide'));$('loginOverlay').addEventListener('click',e=>{if(e.target===$('loginOverlay'))$('loginOverlay').classList.add('hide')});window.addEventListener('beforeunload',e=>{if(state.dirty){e.preventDefault();e.returnValue=''}});window.addEventListener('focus',refresh);document.addEventListener('visibilitychange',()=>{if(!document.hidden)refresh()});setInterval(()=>{if(!document.hidden)refresh()},30000)}
+function events(){$('refreshMarketBtn').addEventListener('click',refreshWorldMarket);$('saveRulesBtn').addEventListener('click',()=>saveMarketRules(false));$('rebaseRulesBtn').addEventListener('click',()=>saveMarketRules(true));$('applyMarketBtn').addEventListener('click',applyMarketPrices);$('marketRules').addEventListener('input',()=>{state.rulesDirty=true;$('ruleSaveState').textContent='มีต้นทุนที่ยังไม่บันทึก'});$('publicMode').addEventListener('click',()=>switchView('public'));$('staffMode').addEventListener('click',()=>switchView('manager'));$('publicDate').addEventListener('change',e=>{state.publicDate=e.target.value&&e.target.value<=today()?e.target.value:today();renderPublic()});$('effectiveDate').addEventListener('change',e=>{if(!requireDiscard()){e.target.value=state.managerDate;return}const val=e.target.value;if(!val||val<'2020-01-01'||val>shiftDay(today(),366)){notify('วันที่อยู่นอกช่วงที่อนุญาต');e.target.value=state.managerDate;return}state.managerDate=val;renderManager()});$('calcAmount').addEventListener('input',calculate);$('calcFuel').addEventListener('change',calculate);$('priceNote').addEventListener('input',()=>state.dirty=true);$('saveDraftBtn').addEventListener('click',saveDraft);$('publishBtn').addEventListener('click',publish);$('copyPreviousBtn').addEventListener('click',()=>{const row=earlier(state.publications,state.managerDate);if(!row){notify('ยังไม่มีราคาก่อนหน้า');return}for(const fuel of FUELS)$('editRows').querySelector(`[data-fuel="${fuel.id}"]`).value=row.prices[fuel.id]??'';state.dirty=true;updateDiffs();notify('คัดลอกราคาก่อนหน้าแล้ว กรุณาตรวจสอบก่อนประกาศ')});$('previewBtn').addEventListener('click',()=>switchView('public'));$('signoutBtn').addEventListener('click',logout);$('signoutInlineBtn').addEventListener('click',logout);$('loginForm').addEventListener('submit',login);$('closeLoginBtn').addEventListener('click',()=>$('loginOverlay').classList.add('hide'));$('loginOverlay').addEventListener('click',e=>{if(e.target===$('loginOverlay'))$('loginOverlay').classList.add('hide')});window.addEventListener('beforeunload',e=>{if(state.dirty||state.rulesDirty){e.preventDefault();e.returnValue=''}});window.addEventListener('focus',refresh);document.addEventListener('visibilitychange',()=>{if(!document.hidden)refresh()});setInterval(()=>{if(!document.hidden)refresh()},30000)}
 async function start(){events();dateLimits();const url=window.SPEEDGO_CONFIG?.url,key=window.SPEEDGO_CONFIG?.publishableKey;
  if(!url||!key||/YOUR-PROJECT|YOUR_KEY/.test(url+' '+key)||!/^https:\/\//.test(url)){showError('ยังไม่ตั้งค่า Supabase: กรุณาใส่ Project URL และ Publishable Key ในไฟล์ config.js ก่อนเปิดใช้งานจริง');$('publicPrices').innerHTML='<div class="card empty" style="grid-column:1/-1">ระบบยังไม่ได้เชื่อมต่อฐานข้อมูลจริง</div>';$('staffMode').disabled=true;return}
  try{setBusy(true);state.db=createClient(url,key,{auth:{persistSession:true,autoRefreshToken:true,detectSessionInUrl:true}});const userRes=await state.db.auth.getUser();state.user=userRes.error?null:userRes.data?.user||null;state.manager=state.user?check(await state.db.rpc('is_manager'))===true:false;await loadData();state.ready=true;state.db.auth.onAuthStateChange(event=>{if(event==='SIGNED_OUT'&&state.user){state.user=null;state.manager=false;state.dirty=false;state.view='public';$('staffView').classList.add('hide');$('publicView').classList.remove('hide');$('staffMode').classList.remove('active');$('publicMode').classList.add('active');$('signoutBtn').classList.add('hide');renderPublic()}})}catch(e){showError('โหลดข้อมูลออนไลน์ไม่สำเร็จ: '+message(e));$('publicPrices').innerHTML='<div class="card empty" style="grid-column:1/-1">ไม่สามารถโหลดข้อมูลราคาจากเซิร์ฟเวอร์ได้</div>'}finally{setBusy(false)}}
