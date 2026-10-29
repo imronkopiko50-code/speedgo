@@ -2,11 +2,11 @@
 <html lang="th">
 <head>
   <meta charset="UTF-8">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'none'; base-uri 'self'; form-action 'self'; object-src 'none'; script-src 'sha256-+YyX4JTPn4I33y2dgvd2A4KnEUKboQ7PpyeWeoZ8idI=' 'sha256-i4iYK5LIHlpgwEg3UTdDGHFMSh6Nj2UN2cp3UfJe4i4=' https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self' data:; connect-src https://*.supabase.co wss://*.supabase.co https://cdn.jsdelivr.net">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'none'; base-uri 'self'; form-action 'self'; object-src 'none'; script-src 'sha256-+YyX4JTPn4I33y2dgvd2A4KnEUKboQ7PpyeWeoZ8idI=' 'sha256-/7GLWLswqLzeBCEWydPE7NWWg+8tMSQMKQvd5333Uoo=' https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self' data:; connect-src https://*.supabase.co wss://*.supabase.co https://cdn.jsdelivr.net">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#bd071b">
-  <meta name="description" content="เช็กราคาน้ำมัน SpeedGo ประจำวัน ราคาล่าสุดของสถานีบริการ พร้อมประวัติราคาและคำนวณจำนวนลิตร">
-  <title>SpeedGo FuelTrack | ราคาน้ำมันวันนี้</title>
+  <meta name="description" content="เช็กราคาน้ำมันและ PEA EV SpeedGo เทียบราคาเดิม ราคาใหม่ และส่วนต่างขึ้นลง พร้อมประวัติราคา">
+  <title>SpeedGo FuelTrack | ราคาน้ำมันและ PEA EV วันนี้</title>
   <style>
 :root{--red:#d80920;--red-dark:#96000e;--red-soft:#fff1f2;--ink:#1d1b20;--muted:#7d7b86;--line:#ebe9ef;--bg:#f6f6f8;--green:#0a985c;--amber:#b36e14;--shadow:0 13px 34px rgba(38,18,25,.055)}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",Tahoma,"Noto Sans Thai",sans-serif;background:var(--bg);color:var(--ink);font-size:14px}button,input,select,textarea{font:inherit}button{cursor:pointer}button:disabled{opacity:.5;cursor:not-allowed}button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid #ffb037;outline-offset:2px}button,.control{transition:.15s ease}.hide{display:none!important}.container{max-width:1260px;margin:auto;padding:0 24px}.small{font-size:12px}.muted{color:var(--muted)}.headbar{height:77px;background:white;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:20}.headinner{height:100%;display:flex;align-items:center;justify-content:space-between;gap:14px}.brand{display:flex;align-items:center;gap:11px;text-decoration:none;color:inherit;min-width:0}.emblem{width:44px;height:44px;display:grid;place-items:center;flex:0 0 auto;color:#fff;background:linear-gradient(140deg,#f91128,#ad0011);font-size:31px;font-weight:1000;font-style:italic;letter-spacing:-4px;padding-right:6px;border-radius:14px 5px 14px 5px;box-shadow:0 6px 13px #bc061632}.brand-main{font-size:22px;line-height:1;font-weight:900;font-style:italic;letter-spacing:-1.1px;color:#cd0a1b}.brand-sub{font-size:12px;color:#38323a;font-weight:750;letter-spacing:.5px;margin-top:3px}.head-actions{display:flex;align-items:center;gap:9px}.mode-switch{display:flex;gap:3px;padding:4px;background:#f5f4f7;border:1px solid #efedf2;border-radius:13px}.mode-switch button{border:0;background:transparent;color:#66616e;padding:9px 16px;border-radius:9px;font-size:12px;font-weight:700;white-space:nowrap}.mode-switch button.active{background:#cf0b1b;color:white;box-shadow:0 4px 10px #c8162630}.btn{display:inline-flex;align-items:center;gap:7px;justify-content:center;white-space:nowrap;background:#fff;border:1px solid var(--line);padding:11px 17px;border-radius:11px;color:#29262d;font-weight:700;font-size:12px;text-decoration:none}.btn:hover{border-color:#e0a7b0;transform:translateY(-1px)}.btn-red{background:linear-gradient(110deg,#e41029,#b80014);border-color:#be0818;color:white;box-shadow:0 6px 14px #c4061630}.btn-dark{background:#211e27;color:white;border-color:#211e27}.btn-ghost{color:#c50820;background:#fff5f6;border-color:#ffe1e5}.btn-quiet{border-color:transparent;background:transparent;color:var(--muted)}.hero{background:radial-gradient(circle at 85% 0%,#fc6f4748 0%,transparent 27%),linear-gradient(115deg,#3a050d 0%,#9d0719 44%,#ec192b 96%);overflow:hidden;border-radius:24px;position:relative;color:#fff;margin-top:25px;min-height:245px;display:flex;align-items:center;justify-content:space-between;padding:32px 38px}.hero:before{content:"S";font:italic 1000 300px/1 Arial,sans-serif;position:absolute;right:45px;top:-37px;transform:rotate(-17deg);color:#ffffff13;pointer-events:none}.hero:after{content:"";position:absolute;width:470px;height:470px;border:1px solid #ffffff1d;border-radius:50%;right:-90px;top:-160px;box-shadow:0 0 0 32px #ffffff05,0 0 0 65px #ffffff04;pointer-events:none}.hero-content{position:relative;z-index:1;max-width:730px}.eyebrow{display:flex;align-items:center;gap:8px;color:#ffc6ca;font-weight:700;letter-spacing:.65px;font-size:11px;text-transform:uppercase}.ping{display:inline-block;width:8px;height:8px;border-radius:50%;background:#ffba51;box-shadow:0 0 0 5px #ffb94720}.hero h1{font-size:38px;line-height:1.25;margin:13px 0 10px;letter-spacing:-.9px}.hero p{font-size:13px;line-height:1.9;color:#ffe2e4;max-width:690px;margin:0}.hero-side{z-index:1;flex:0 0 245px;border:1px solid #ffffff32;background:#ffffff17;border-radius:20px;padding:19px 21px;backdrop-filter:blur(5px)}.hero-side .lil{font-size:11px;color:#ffe3e4}.hero-side .big{font-size:27px;font-weight:850;margin:7px 0}.hero-side .sub{font-size:11px;color:#fbc7ca;line-height:1.7}.statusbar{margin-top:15px;display:flex;gap:10px;flex-wrap:wrap;align-items:center;justify-content:space-between}.status-note{font-size:12px;color:#775d61;line-height:1.7;display:flex;align-items:center;gap:8px}.status-dot{width:7px;height:7px;border-radius:50%;background:#e6a13b;display:inline-block;flex:0 0 7px}.demo-banner{background:#fff6e8;border:1px solid #f3d7a5;color:#815618;padding:12px 15px;border-radius:12px;margin-top:17px;font-size:12px;line-height:1.7}.toolbar{display:flex;justify-content:space-between;align-items:center;gap:18px;flex-wrap:wrap;margin:28px 0 16px}.toolbar h2{margin:0;font-size:21px;letter-spacing:-.5px}.toolbar p{margin:5px 0 0;color:var(--muted);font-size:12px}.tools{display:flex;align-items:end;gap:9px;flex-wrap:wrap}.field>label{display:block;font-size:11px;font-weight:700;color:#827d87;margin:0 0 6px}.control{border-radius:11px;background:white;border:1px solid #e6e3eb;color:#28252d;padding:11px 12px;min-height:44px;max-width:100%;width:100%;font-size:13px;outline:0}.control:focus{border-color:#d42137}.field{min-width:145px}.card{background:#fff;border:1px solid #eceaf0;border-radius:20px;box-shadow:var(--shadow);padding:23px}.price-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}.price-card{border:1px solid #ebe9ed;background:#fff;border-radius:19px;padding:19px 20px 16px;box-shadow:var(--shadow)}.price-row{display:flex;gap:13px;align-items:center;justify-content:space-between}.fuel-info{display:flex;gap:11px;align-items:center;min-width:0}.pump{flex:0 0 46px;width:46px;height:46px;border-radius:13px;display:grid;place-items:center;font-size:20px;color:#fff;font-weight:900;background:var(--f-color,#be071a);box-shadow:0 5px 12px #33101514}.pump svg{width:23px;height:23px;stroke:white}.fuel-name{font-size:13px;font-weight:800;line-height:1.4}.fuel-code{font-size:10px;color:#8b8691;margin-top:3px}.price-value{font-weight:900;letter-spacing:-.8px;font-size:32px;line-height:1.1;margin:19px 0 12px}.price-value small{font-size:11px;font-weight:450;color:#928c96;letter-spacing:0}.price-foot{display:flex;align-items:center;justify-content:space-between;gap:8px;border-top:1px solid #f0edf1;padding-top:12px;font-size:11px;color:#9a9299}.delta{font-weight:800}.delta.up{color:#d91527}.delta.down{color:#06915c}.delta.flat{color:#96949e}.two-col{display:grid;grid-template-columns:minmax(0,1.55fr) minmax(285px,1fr);gap:17px;margin-top:18px}.panel-title{font-size:16px;font-weight:800;margin:0 0 4px}.panel-sub{font-size:11px;color:#8c8791;margin:0}.chart-wrap{margin-top:17px;min-height:225px}.chart-wrap svg{max-width:100%;width:100%;height:auto}.chipline{display:flex;gap:8px;flex-wrap:wrap;margin-top:6px}.chipline span{font-size:10px;color:#77717d;display:flex;gap:5px;align-items:center}.chipline i{display:inline-block;width:8px;height:8px;border-radius:50%}.calc-summary{margin-top:15px;padding:17px;border:1px solid #ffdadf;background:linear-gradient(110deg,#fff5f6,#fff);border-radius:14px;display:flex;align-items:center;justify-content:space-between}.calc-summary strong{font-weight:900;font-size:29px;color:#c50a1d}.calc-summary strong small{font-size:13px}.calc-summary span{color:#a36b75;font-size:12px}.form-cols{display:grid;grid-template-columns:1fr 1fr;gap:11px;margin-top:17px}.history{width:100%;border-collapse:collapse}.history th{text-align:left;color:#88828e;font-weight:700;font-size:11px;padding:12px 8px;border-bottom:1px solid #eceaf0}.history td{padding:13px 8px;border-bottom:1px solid #f1eff3;font-size:12px}.history tr:last-child td{border-bottom:0}.table-scroll{overflow-x:auto}.pill{display:inline-block;border:1px solid #ffe0e3;background:#fff3f4;color:#bd071d;border-radius:100px;padding:5px 9px;font-weight:800;font-size:10px;white-space:nowrap}.pill.green{background:#ecfaf3;color:#16865a;border-color:#d8f3e5}.pill.grey{background:#f6f5f7;color:#77717e;border-color:#e8e5eb}.staff-layout{display:grid;grid-template-columns:minmax(0,1.65fr) minmax(300px,1fr);gap:17px;margin-top:19px}.staff-table{width:100%;border-collapse:collapse}.staff-table th{text-align:left;font-size:11px;color:#8d8791;font-weight:700;background:#faf9fb;padding:12px;border-bottom:1px solid #eeeaf0}.staff-table td{padding:13px 12px;border-bottom:1px solid #f3eff2;vertical-align:middle}.staff-table tr:last-child td{border-bottom:0}.staff-table input{width:120px;max-width:100%;font-weight:800;font-size:18px;padding:10px;border:1px solid #ddd8e0;border-radius:9px;outline:0}.staff-table input:focus{border-color:#c5142b;background:#fffbfc}.staff-table .fuel-name{font-size:12px}.staff-table .pump{width:38px;height:38px;flex-basis:38px}.staff-table .fuel-info{gap:9px}.staff-table .pump svg{width:18px}.staff-footer{display:flex;gap:9px;flex-wrap:wrap;justify-content:flex-end;margin-top:18px}.audit-box{max-height:350px;overflow:auto}.audit-item{padding:13px 0;border-bottom:1px solid #f0edf1}.audit-item:last-child{border-bottom:0}.audit-head{display:flex;gap:8px;justify-content:space-between;align-items:center}.audit-item strong{font-size:12px}.audit-item p{font-size:11px;color:#77737d;line-height:1.7;margin:5px 0 0}.tip{padding:14px;border:1px solid #e8e3e9;background:#faf8fa;border-radius:12px;font-size:11px;color:#77717e;line-height:1.85;margin-top:17px}.notice-red{padding:13px 15px;border-radius:12px;background:#fff1f3;border:1px solid #ffd9df;color:#a62635;font-size:12px;line-height:1.8}.empty{text-align:center;color:#928b95;padding:45px 15px;font-size:13px;line-height:2}.foot{color:#aaa1a9;font-size:11px;margin:34px 0 32px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px}.overlay{position:fixed;inset:0;z-index:50;background:#120b10a8;display:flex;align-items:center;justify-content:center;padding:20px}.dialog{max-width:415px;width:100%;padding:29px;background:#fff;border-radius:22px;box-shadow:0 30px 80px #0005}.dialog h2{margin:2px 0 7px}.dialog p{font-size:12px;color:#807984;line-height:1.8}.toast{position:fixed;bottom:23px;right:24px;z-index:90;padding:15px 19px;border-radius:13px;background:#242029;color:white;box-shadow:0 12px 34px #22112233;max-width:min(390px,90vw);font-size:12px;line-height:1.6;opacity:0;transform:translateY(14px);transition:.18s;pointer-events:none}.toast.show{opacity:1;transform:none}.row-between{display:flex;justify-content:space-between;align-items:center;gap:12px}.loader{height:4px;background:#ffced4;position:fixed;z-index:70;top:0;left:0;right:0;display:none}.loader:before{content:"";display:block;width:38%;height:100%;background:#b5071a;animation:slide 1s ease-in-out infinite}@keyframes slide{from{transform:translateX(-100%)}to{transform:translateX(300%)}}.loader.on{display:block}
 @media(max-width:1000px){.price-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.hero-side{flex-basis:200px}.staff-layout{grid-template-columns:1fr}}@media(max-width:720px){.container{padding:0 15px}.headbar{height:70px}.emblem{width:38px;height:38px;font-size:27px}.brand-main{font-size:19px}.brand-sub{font-size:11px}.mode-switch button{padding:8px 10px;font-size:11px}.hero{padding:27px 23px;min-height:217px;border-radius:19px;display:block;margin-top:16px}.hero h1{font-size:30px}.hero-side{margin-top:20px;width:100%;padding:13px 17px}.hero-side .big{font-size:21px}.toolbar{align-items:flex-start}.tools{width:100%;gap:8px}.tools .field{min-width:0;flex:1}.price-grid{grid-template-columns:1fr 1fr;gap:10px}.price-card{padding:14px;border-radius:15px}.pump{width:38px;height:38px;flex-basis:38px}.pump svg{width:19px}.fuel-name{font-size:11px}.fuel-code{font-size:9px}.price-value{font-size:27px;margin:16px 0 10px}.price-foot{font-size:10px}.two-col{grid-template-columns:1fr}.card{padding:17px;border-radius:17px}.staff-table td{padding:10px 6px}.staff-table th{padding:10px 6px}.staff-table .pump{display:none}.staff-table input{width:94px;font-size:17px}.staff-table .fuel-name{font-size:11px}.staff-footer{justify-content:stretch}.staff-footer .btn{flex:1}.head-actions .top-signout{display:none}}@media(max-width:400px){.price-grid{grid-template-columns:1fr}.headbar .brand-sub{display:none}.fuel-name{font-size:13px}.price-card{padding:17px}.price-value{font-size:31px}.form-cols{grid-template-columns:1fr}.hero h1{font-size:26px}}
@@ -86,6 +86,48 @@
 @media(max-width:760px){.market-panel{padding:17px}.market-metrics{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.market-metric{padding:12px}.market-metric strong{font-size:20px}.market-metric:last-child{grid-column:1/-1}.market-rules{grid-template-columns:1fr}.market-head h3{font-size:17px}.market-actions .btn{white-space:normal}.rule-fields .field>label{min-height:0}}
 @media(max-width:400px){.rule-fields{grid-template-columns:1fr 1fr;gap:8px}.rule-card{padding:11px}.rule-fields .control{padding:10px 8px}}
 
+
+/* SpeedGo Fuel & EV Edition */
+.comparison-panel{margin-top:18px;border:1px solid #e9e4e9}
+.compare-table{width:100%;border-collapse:collapse;min-width:540px}
+.compare-table th{font-size:11px;font-weight:800;text-align:left;color:#736b77;background:#faf9fb;padding:13px 12px;border-bottom:1px solid #eee9ef}
+.compare-table td{padding:13px 12px;border-bottom:1px solid #f1edf1;font-size:13px;white-space:nowrap}
+.compare-table tr:last-child td{border-bottom:0}
+.compare-table td:nth-child(3){font-weight:900;font-size:15px;color:#ad0c22}
+.compare-table .product-name{font-weight:800}
+.product-unit{display:block;margin-top:2px;color:#918b94;font-size:10px;font-weight:500}
+.price-compare{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:12px 0 0}
+.price-compare>div{padding:10px 12px;border-radius:12px;background:#f8f7f9;min-width:0}
+.price-compare>div:last-child{background:#fff0f2}
+.price-compare .label{font-size:10px;color:#928892;font-weight:700}
+.price-compare strong{display:block;font-size:17px;line-height:1.4;color:#252029}
+.price-compare>div:last-child strong{color:#b60b20}
+.price-card.ev-card{border-color:#e4d8ff;background:linear-gradient(155deg,#fff,#fcfaff)}
+.price-card.ev-card .price-compare>div:last-child{background:#f1edff}
+.price-card.ev-card .price-compare>div:last-child strong{color:#6b36ad}
+.price-card .price-value{margin:10px 0 0;font-size:27px}
+.price-card .price-foot{margin-top:13px}
+.pump.ev{background:linear-gradient(145deg,#7b31c5,#a955ff)}
+.ev-panel{margin:18px 0 0;border-color:#e7ddf3;background:linear-gradient(145deg,#fff,#fcf9ff)}
+.ev-panel .rule-card{border-color:#e9e1f0}
+.ev-panel .market-advice{background:#f6f1fa}
+.staff-compare{min-width:650px}
+.staff-compare td:nth-child(2){font-weight:750;color:#77717c;white-space:nowrap}
+.staff-compare input{width:108px}
+.staff-compare .delta{white-space:nowrap}
+@media(max-width:720px){
+ .price-compare strong{font-size:15px}
+ .price-card .price-value{font-size:25px}
+ .comparison-panel{padding:16px}
+ .compare-table{min-width:530px}
+ .staff-compare{min-width:650px}
+ .staff-compare .pump{display:none}
+ .staff-layout{grid-template-columns:minmax(0,1fr)}
+}
+.staff-layout > section,.staff-layout > aside{min-width:0;max-width:100%}
+.market-panel,.ev-panel{min-width:0}
+@media(max-width:400px){.price-compare strong{font-size:17px}}
+
 </style>
 </head>
 <body>
@@ -93,28 +135,33 @@
 <header class="headbar"><div class="container headinner">
   <a class="brand" href="#" aria-label="SpeedGo FuelTrack"><div class="emblem">S</div><div><div class="brand-main">SpeedGo</div><div class="brand-sub">FUELTRACK</div></div></a>
   <div class="head-actions"><div class="mode-switch" aria-label="โหมดใช้งาน">
-    <button id="publicMode" class="active" type="button">⛽ ดูราคาน้ำมัน</button>
+    <button id="publicMode" class="active" type="button">⛽ ราคาน้ำมัน / EV</button>
     <button id="staffMode" type="button">⚙ แอดมิน</button>
   </div><button class="btn btn-quiet top-signout hide" id="signoutBtn" type="button">ออกจากระบบ</button></div>
 </div></header>
 <main class="container">
-  <section class="hero"><div class="hero-content"><div class="eyebrow"><span class="ping"></span> SPEEDGO · ราคาน้ำมันประจำวัน</div>
-    <h1 id="heroTitle">ราคาน้ำมัน SpeedGo<br>วันนี้</h1>
-    <p id="heroDesc">เช็กราคาน้ำมันล่าสุดจากสถานีบริการ SpeedGo อัปเดตตามประกาศราคา เพื่อช่วยให้คุณวางแผนการเติมน้ำมันได้สะดวกยิ่งขึ้น</p>
+  <section class="hero"><div class="hero-content"><div class="eyebrow"><span class="ping"></span> SPEEDGO · ราคาน้ำมันและ EV ประจำวัน</div>
+    <h1 id="heroTitle">ราคาน้ำมันและ EV SpeedGo<br>วันนี้</h1>
+    <p id="heroDesc">เช็กราคาน้ำมันและบริการชาร์จ PEA EV ล่าสุด พร้อมดูราคาเดิม ราคาใหม่ และส่วนต่างที่เปลี่ยนแปลงจากประกาศก่อนหน้า</p>
   </div><div class="hero-side"><div class="lil" id="heroMiniLabel">ราคาน้ำมันประจำวันที่</div><div class="big" id="heroMiniDate">—</div><div class="sub" id="heroMiniDesc">แสดงราคาที่ประกาศใช้ล่าสุด</div></div></section>
   <div class="hide" id="appError" role="alert"></div>
   <div class="statusbar"><span class="status-note"><i class="status-dot"></i><span id="modeStatus">กำลังเชื่อมต่อระบบ</span></span><span class="muted small" id="lastUpdated"></span></div>
   <section id="publicView">
-    <div class="toolbar"><div><h2>ราคาน้ำมันประจำวัน</h2><p>ตรวจสอบราคาน้ำมันแต่ละประเภทของ SpeedGo · บาท/ลิตร</p></div>
+    <div class="toolbar"><div><h2>ราคาน้ำมันและ PEA EV</h2><p>น้ำมัน 5 ประเภท (บาท/ลิตร) · PEA EV 2 ช่วงเวลา (บาท/kWh)</p></div>
       <div class="tools"><div class="field public-date-field"><label for="publicDate">เลือกวันที่ตรวจสอบราคา</label><div class="date-control"><span class="date-visible" id="publicDateLabel" aria-hidden="true">กำลังโหลดวันที่…</span><span class="date-icon" aria-hidden="true">📅</span><input type="date" id="publicDate" aria-label="เลือกวันที่ตรวจสอบราคา"></div></div></div>
     </div>
-    <div class="price-grid" id="publicPrices"><div class="card empty">กำลังโหลดราคาน้ำมัน…</div></div>
+    <div class="price-grid" id="publicPrices"><div class="card empty">กำลังโหลดราคาน้ำมันและ EV…</div></div>
+    <section class="card comparison-panel" aria-labelledby="compareTitle">
+      <div class="row-between" style="gap:12px;flex-wrap:wrap"><div><h3 class="panel-title" id="compareTitle">📊 เปรียบเทียบราคาเดิมกับราคาใหม่</h3><p class="panel-sub" id="comparePeriod">เทียบราคาที่มีผลก่อนประกาศล่าสุด</p></div><span class="pill grey">ขึ้น ▲ / ลง ▼ / คงเดิม —</span></div>
+      <div class="table-scroll" style="margin-top:15px"><table class="compare-table"><thead><tr><th>สินค้า / หน่วย</th><th>ราคาเดิม</th><th>ราคาใหม่</th><th>เปลี่ยนแปลง</th></tr></thead><tbody id="publicComparison"><tr><td colspan="4" class="muted">กำลังโหลดข้อมูล…</td></tr></tbody></table></div>
+      <p class="muted small" style="margin:12px 0 0">ข้อมูลจากประกาศราคาของ SpeedGo เท่านั้น หากยังไม่มีราคา EV ที่ประกาศ ระบบจะแสดง “ยังไม่ประกาศ” แทนการคาดเดาราคา</p>
+    </section>
     <div class="two-col"><section class="card"><div class="row-between"><div><h3 class="panel-title">แนวโน้มราคาน้ำมัน 7 วัน</h3><p class="panel-sub">ราคาที่มีผลในแต่ละวันจากประกาศล่าสุด ณ วันนั้น</p></div><span class="pill grey">บาท/ลิตร</span></div><div class="chart-wrap" id="chartWrap"></div><div class="chipline" id="chartLegend"></div></section>
     <section class="card"><h3 class="panel-title">เติมเงินเท่านี้ ได้กี่ลิตร?</h3><p class="panel-sub">คำนวณจากราคาที่มีผลในวันที่เลือก</p><div class="form-cols"><div class="field"><label for="calcAmount">จำนวนเงิน (บาท)</label><input class="control" type="number" min="0" step="1" id="calcAmount" value="500"></div><div class="field"><label for="calcFuel">ประเภทน้ำมัน</label><select class="control" id="calcFuel"></select></div></div><div class="calc-summary"><div><span>จะได้รับน้ำมันประมาณ</span><div><strong id="calcLiters">—</strong> <span>ลิตร</span></div></div><span style="font-size:31px">⛽</span></div><p class="muted small">* ปริมาณโดยประมาณ ไม่รวมโปรโมชั่นหรือส่วนลดอื่น</p></section></div>
-    <section class="card" style="margin-top:18px"><div class="row-between"><div><h3 class="panel-title">ประวัติราคาประกาศ</h3><p class="panel-sub">ดูราคาย้อนหลังได้</p></div><span class="pill green">ประกาศแล้ว</span></div><div class="table-scroll" style="margin-top:13px"><table class="history"><thead><tr><th>วันที่มีผล</th><th>สรุปราคา</th><th>อัปเดตเมื่อ</th></tr></thead><tbody id="publicHistory"></tbody></table></div></section>
+    <section class="card" style="margin-top:18px"><div class="row-between"><div><h3 class="panel-title">ประวัติราคาประกาศน้ำมันและ EV</h3><p class="panel-sub">ดูราคาย้อนหลังได้</p></div><span class="pill green">ประกาศแล้ว</span></div><div class="table-scroll" style="margin-top:13px"><table class="history"><thead><tr><th>วันที่มีผล</th><th>สรุปราคา</th><th>อัปเดตเมื่อ</th></tr></thead><tbody id="publicHistory"></tbody></table></div></section>
   </section>
   <section id="staffView" class="hide">
-    <div class="toolbar"><div><h2>จัดการราคาน้ำมัน</h2><p>เฉพาะแอดมิน · กำหนดราคา · บันทึกร่าง · ประกาศ · ตรวจสอบประวัติ</p></div><div class="tools"><button class="btn" id="signoutInlineBtn" type="button">ออกจากระบบ</button></div></div>
+    <div class="toolbar"><div><h2>จัดการราคาน้ำมันและ EV</h2><p>เฉพาะแอดมิน · เทียบราคาเดิมกับราคาใหม่ · บันทึกร่าง · ประกาศ · ประวัติ</p></div><div class="tools"><button class="btn" id="signoutInlineBtn" type="button">ออกจากระบบ</button></div></div>
     <div class="rolestrip"><span class="role-chip" id="staffIdentity">—</span><span class="role-chip" id="staffRole">สิทธิ์แอดมิน</span></div>
     <div class="notice-red" style="margin-top:12px">แอดมินทั้ง 2 บัญชีสามารถแก้ไข บันทึกร่าง และประกาศราคาได้ ลูกค้าเห็นเฉพาะราคาที่ประกาศแล้ว</div>
 
@@ -131,20 +178,29 @@
       <div id="marketRules" class="market-rules"></div>
       <div class="market-actions"><button type="button" class="btn btn-ghost" id="saveRulesBtn">บันทึกต้นทุนและสูตร</button><button type="button" class="btn" id="rebaseRulesBtn">ตั้งฐานตลาดใหม่</button><span id="ruleSaveState" class="muted small"></span></div>
       <div class="market-advice">สูตรราคาแนะนำ = ต้นทุนซื้อ ณ วันที่ตั้งฐาน + ค่าใช้จ่ายเพิ่มเติม + กำไรเป้าหมาย + [(Brent ล่าสุด × USD/THB ล่าสุด − Brent ฐาน × USD/THB ฐาน) ÷ 158.987] × ค่าน้ำหนัก (0–1.5) ทั้งหมดเป็นบาท/ลิตร ต้นทุนซื้อต้องรวมภาษี/ค่าธรรมเนียมที่เกิดขึ้นแล้ว ส่วนค่าใช้จ่ายเพิ่มเติมให้ใส่เฉพาะที่ยังไม่รวม เพื่อเลี่ยงนับซ้ำ สูตรนี้เป็นการประมาณ ไม่ใช่ราคาน้ำมันสำเร็จรูปสิงคโปร์หรือราคาตลาดหน้าปั๊ม</div>
-      <div class="row-between" style="flex-wrap:wrap;gap:10px;margin-top:18px"><div><h3 class="panel-title">ราคาที่ระบบแนะนำ</h3><p class="panel-sub">เทียบกับราคาประกาศล่าสุด ณ วันที่กำลังแก้ไข</p></div><span class="pill grey" id="marketSuggestionCount">ยังไม่คำนวณ</span></div>
+      <div class="row-between" style="flex-wrap:wrap;gap:10px;margin-top:18px"><div><h3 class="panel-title">ราคาน้ำมันที่ระบบแนะนำ</h3><p class="panel-sub">เทียบกับราคาประกาศล่าสุด ณ วันที่กำลังแก้ไข</p></div><span class="pill grey" id="marketSuggestionCount">ยังไม่คำนวณ</span></div>
       <div class="table-scroll"><table class="market-table"><thead><tr><th>ประเภทน้ำมัน</th><th>ราคาแนะนำ (฿/ลิตร)</th><th>เทียบราคาประกาศ</th></tr></thead><tbody id="marketSuggestions"><tr><td colspan="3" class="muted">ต้องตั้งค่าต้นทุนและโหลดข้อมูลตลาดก่อน</td></tr></tbody></table></div>
       <div class="market-actions"><button class="btn btn-red" type="button" id="applyMarketBtn" disabled>นำราคาแนะนำไปยังตารางแก้ไข</button><span class="market-note">ต้องตรวจสอบราคาทุกครั้ง แล้วกด “บันทึกร่าง” หรือ “ยืนยันประกาศราคา” ด้วยตนเอง</span></div>
     </section>
 
-    <div class="staff-layout"><section class="card"><div class="row-between" style="flex-wrap:wrap"><div><h3 class="panel-title">ตั้งราคาประจำวัน</h3><p class="panel-sub">เลือกวันที่มีผล แล้วกรอกราคาน้ำมันที่จำหน่ายจริง</p></div><span class="pill" id="editState">—</span></div>
+    <section class="card ev-panel" id="evAdvisor" aria-labelledby="evTitle">
+      <div class="market-head"><div><h3 id="evTitle">⚡ PEA EV — คำนวณต้นทุนแยกจากน้ำมัน</h3><p>กรอกต้นทุนพลังงาน ค่าใช้จ่าย และกำไรเป้าหมายหน่วยบาท/kWh ไม่ใช้ Brent หรือ USD/THB</p></div><span class="pill grey">ADMIN × 2</span></div>
+      <div class="market-advice">การคำนวณ EV = ต้นทุนพลังงาน + ค่าใช้จ่ายดำเนินการ + กำไรเป้าหมาย (บาท/kWh) เป็นเพียงราคาแนะนำ ไม่เปลี่ยนราคาลูกค้าจนกว่าจะกดยืนยันประกาศ</div>
+      <div class="market-rules" id="evRules"></div>
+      <div class="market-actions"><button class="btn btn-ghost" type="button" id="saveEvRulesBtn">บันทึกต้นทุน EV</button><span class="muted small" id="evSaveState">ยังไม่มีข้อมูลต้นทุน EV</span></div>
+      <div class="table-scroll"><table class="market-table"><thead><tr><th>ช่วงเวลา</th><th>ราคาแนะนำ (บาท/kWh)</th><th>เทียบราคาประกาศ</th></tr></thead><tbody id="evSuggestions"><tr><td colspan="3" class="muted">กรอกและบันทึกต้นทุนก่อน</td></tr></tbody></table></div>
+      <div class="market-actions"><button class="btn btn-red" type="button" id="applyEvBtn" disabled>นำราคา EV แนะนำไปตารางแก้ไข</button><span class="market-note">ราคา EV จะไม่ถูกนำไปบวกในสูตรน้ำมัน</span></div>
+    </section>
+
+    <div class="staff-layout"><section class="card"><div class="row-between" style="flex-wrap:wrap"><div><h3 class="panel-title">ตั้งราคา 7 รายการประจำวัน</h3><p class="panel-sub">ตรวจราคาเดิม → กรอกราคาใหม่ → ดูส่วนต่าง ก่อนบันทึกร่างหรือประกาศ</p></div><span class="pill" id="editState">—</span></div>
       <div class="form-cols manager-date"><div class="field"><label for="effectiveDate">วันที่มีผล (เวลาไทย)</label><input class="control" id="effectiveDate" type="date"></div></div>
-      <div class="table-scroll" style="margin-top:16px"><table class="staff-table"><thead><tr><th>ประเภทน้ำมัน</th><th>ราคาใหม่ (฿/ลิตร)</th><th>เทียบราคาก่อนหน้า</th></tr></thead><tbody id="editRows"></tbody></table></div>
+      <div class="table-scroll" style="margin-top:16px"><table class="staff-table staff-compare"><thead><tr><th>สินค้า / หน่วย</th><th>ราคาเดิม</th><th>ราคาใหม่</th><th>เปลี่ยนแปลง</th></tr></thead><tbody id="editRows"></tbody></table></div>
       <div class="field" style="margin-top:15px"><label for="priceNote">หมายเหตุ (ไม่บังคับ)</label><textarea class="control" rows="2" maxlength="500" id="priceNote" placeholder="เช่น ปรับราคาประจำวันที่เลือก"></textarea></div>
       <div class="staff-footer"><button class="btn" id="copyPreviousBtn" type="button">คัดลอกราคาก่อนหน้า</button><button class="btn btn-ghost" id="saveDraftBtn" type="button">บันทึกร่าง</button><button class="btn btn-red" id="publishBtn" type="button">✓ ยืนยันประกาศราคา</button></div>
-      <div class="tip">ราคาวันที่อนาคตจะยังไม่แสดงแก่ลูกค้าจนถึงวันที่มีผลตามเวลาไทย หากแก้ประกาศวันที่เดิม ระบบจะบันทึกเวอร์ชันและประวัติทุกครั้ง</div>
+      <div class="tip">ราคาเดิมในตารางเทียบกับประกาศก่อนหน้า (หรือราคาที่ประกาศไว้แล้วสำหรับวันที่กำลังแก้ไข) · EV เป็นบาท/kWh · วันอนาคตยังไม่แสดงแก่ลูกค้าจนถึงวันที่มีผลตามเวลาไทย · กดบันทึกร่างได้โดยไม่ประกาศ</div>
     </section><aside><div class="card"><div class="row-between"><h3 class="panel-title">ภาพรวมการประกาศ</h3><span class="pill grey" id="staffDateStatus">—</span></div><div class="calc-summary"><div><span>วันที่มีผล</span><div class="dashboard-date" id="staffSelectedDate">—</div></div><span style="font-size:30px">📅</span></div><p class="muted small" id="staffCurrentSummary" style="line-height:1.8;margin-top:15px">—</p><button class="btn btn-ghost" id="previewBtn" style="width:100%;margin-top:6px" type="button">ดูหน้าจอลูกค้า →</button></div><div class="card" style="margin-top:16px"><div class="row-between"><h3 class="panel-title">ประวัติการประกาศ</h3><span class="pill grey">Audit log</span></div><div class="audit-box" id="auditItems" style="margin-top:8px"></div></div></aside></div>
   </section>
-  <footer class="foot"><span><b>SpeedGo FuelTrack</b> · ราคากำหนดโดยแอดมิน</span><span>CLOUD · ADMIN × 2</span></footer>
+  <footer class="foot"><span><b>SpeedGo FuelTrack</b> · Fuel & EV · ราคากำหนดโดยแอดมิน</span><span>CLOUD · ADMIN × 2</span></footer>
 </main>
 <div class="overlay hide" id="loginOverlay" role="dialog" aria-modal="true" aria-labelledby="loginTitle"><div class="dialog"><div class="row-between"><h2 id="loginTitle">เข้าสู่ระบบแอดมิน</h2><button type="button" class="btn btn-quiet" id="closeLoginBtn" aria-label="ปิด">✕</button></div><p>สำหรับแอดมิน SpeedGo 2 บัญชีที่ได้รับสิทธิ์ใน Supabase เท่านั้น</p><form id="loginForm"><div class="field" style="margin:18px 0 12px"><label for="loginEmail">อีเมลแอดมิน</label><input type="email" class="control" id="loginEmail" autocomplete="username" required placeholder="manager@example.com"></div><div class="field"><label for="loginPassword">รหัสผ่าน</label><input type="password" class="control" id="loginPassword" autocomplete="current-password" required></div><p class="small" id="loginError" role="alert" style="color:#c50e24"></p><button class="btn btn-red" type="submit" style="width:100%;margin-top:10px">เข้าสู่ระบบแอดมิน</button></form></div></div>
 <div class="toast" role="status" aria-live="polite" id="toast"></div>
@@ -159,11 +215,22 @@ window.SPEEDGO_CONFIG = {
 const FUELS = [
   { id: 'diesel', name: 'ดีเซล', code: 'DIESEL', color: '#1849ab' },
   { id: 'b20', name: 'ดีเซล B20', code: 'B20', color: '#d40d23' },
-  { id: 'benz95', name: 'เบนซิน 95', code: 'BENZENE 95', color: '#ef8612' },
   { id: 'g95', name: 'แก๊สโซฮอล์ 95', code: 'GASOHOL 95', color: '#14875c' },
   { id: 'g91', name: 'แก๊สโซฮอล์ 91', code: 'GASOHOL 91', color: '#6b4cbe' },
-  { id: 'e20', name: 'แก๊สโซฮอล์ E20', code: 'GASOHOL E20', color: '#b64585' },
+  { id: 'e20', name: 'แก๊สโซฮอล์ E20', code: 'GASOHOL E20', color: '#068e63' },
 ];
+const EV_PRODUCTS = [
+  { id: 'ev_offpeak', name: 'PEA EV Off-Peak', code: 'OFF-PEAK', color: '#7132b9', unit: 'kWh', category: 'ev' },
+  { id: 'ev_onpeak', name: 'PEA EV On-Peak', code: 'ON-PEAK', color: '#9b42d6', unit: 'kWh', category: 'ev' },
+];
+const PRODUCTS = [...FUELS, ...EV_PRODUCTS];
+const isEv = item => item.category === 'ev';
+const unitText = item => isEv(item) ? 'บาท/kWh' : 'บาท/ลิตร';
+const unitShort = item => isEv(item) ? '฿/kWh' : '฿/L';
+const productIcon = item => isEv(item) ? '<span aria-hidden="true" style="font-size:23px">⚡</span>' : pump;
+const priceText = value => value == null ? '—' : money(value);
+const productLabel = item => `${item.name} (${unitText(item)})`;
+
 function bangkokToday(date = new Date()) {
   const parts = new Intl.DateTimeFormat('en-US', { timeZone: 'Asia/Bangkok', year: 'numeric', month: '2-digit', day: '2-digit' }).formatToParts(date);
   const values = Object.fromEntries(parts.map(({type,value})=>[type,value]));
@@ -182,13 +249,13 @@ function validPriceString(value) {
 }
 function validatePrices(inputs) {
   const result = {};
-  for (const f of FUELS) {
+  for (const f of PRODUCTS) {
     const v = inputs[f.id];
     if (String(v ?? '').trim() === '') continue;
-    if (!validPriceString(v)) throw new Error(`${f.name}: กรุณากรอกราคา 0.01–200.00 บาท สูงสุด 2 ตำแหน่ง`);
+    if (!validPriceString(v)) throw new Error(`${f.name}: กรุณากรอกราคา ${unitText(f)} ระหว่าง 0.01–200.00 สูงสุด 2 ตำแหน่ง`);
     result[f.id] = Math.round(Number(v)*100)/100;
   }
-  if (!Object.keys(result).length) throw new Error('กรุณากรอกราคาน้ำมันอย่างน้อย 1 ประเภท');
+  if (!Object.keys(result).length) throw new Error('กรุณากรอกราคาน้ำมันหรือ EV อย่างน้อย 1 รายการ');
   return result;
 }
 function mostRecent(rows, day) {
@@ -217,42 +284,94 @@ const $ = id => document.getElementById(id);
 const today = () => bangkokToday();
 const pump = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 22V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v17M2 22h16M6 7h8v6H6z"/><path d="M17 8h2l3 4v7a2 2 0 0 1-4 0v-5"/></svg>`;
 const state = { db:null, user:null, manager:false, publications:[],drafts:[],audit:[],
-  publicDate:today(),managerDate:today(),view:'public',dirty:false,rulesDirty:false,marketRules:[],marketSnapshot:null,marketError:'',marketLoading:false,version:0,busy:false,ready:false,requestId:0 };
+  publicDate:today(),managerDate:today(),view:'public',dirty:false,rulesDirty:false,evRulesDirty:false,evRules:[],evError:'',marketRules:[],marketSnapshot:null,marketError:'',marketLoading:false,version:0,busy:false,ready:false,requestId:0 };
 let toastTimer;
 function notify(msg){$('toast').textContent=String(msg);$('toast').classList.add('show');clearTimeout(toastTimer);toastTimer=setTimeout(()=>$('toast').classList.remove('show'),4800)}
 function setBusy(b){state.busy=b;$('loader').classList.toggle('on',b);$('saveDraftBtn').disabled=b||!state.manager;$('publishBtn').disabled=b||!state.manager}
 function check(result){if(result.error)throw result.error;return result.data}
 function message(error){const text=error?.message||String(error);if(/PRICE_CONFLICT|40001/.test(text))return 'ข้อมูลถูกปรับจากที่โหลดไว้ กรุณาโหลดหน้าใหม่ก่อนประกาศซ้ำ';if(/NOT_AUTHORIZED|42501/.test(text))return 'บัญชีนี้ไม่มีสิทธิ์แอดมิน';if(/INVALID_|22023/.test(text))return 'ข้อมูลราคา วันที่ หรือหมายเหตุไม่ถูกต้อง';if(/Invalid login credentials/i.test(text))return 'อีเมลหรือรหัสผ่านไม่ถูกต้อง';return text}
 function showError(text){$('appError').textContent=text||'';$('appError').classList.toggle('hide',!text);$('modeStatus').textContent=text?'เชื่อมต่อไม่สำเร็จ':'ข้อมูลออนไลน์ · อัปเดตอัตโนมัติทุก 30 วินาที';document.querySelector('.status-dot').classList.toggle('error',!!text);document.querySelector('.status-dot').classList.toggle('online',!text)}
-function requireDiscard(){return !(state.dirty||state.rulesDirty)||confirm('คุณยังไม่ได้บันทึกการแก้ไขราคา/ต้นทุน ยืนยันออกจากหน้านี้หรือไม่?')}
+function requireDiscard(){return !(state.dirty||state.rulesDirty||state.evRulesDirty)||confirm('คุณยังไม่ได้บันทึกการแก้ไขราคา/ต้นทุน ยืนยันออกจากหน้านี้หรือไม่?')}
 const publicRows = () => state.publications.filter(r=>r.effective_date<=today());
 const exact = day => state.publications.find(r=>r.effective_date===day);
 function differenceHtml(cur,prev){let d=difference(cur,prev);if(d==null)return '<span class="delta flat">ราคาเริ่มต้น</span>';if(d===0)return '<span class="delta flat">— 0.00</span>';return `<span class="delta ${d>0?'up':'down'}">${d>0?'▲ +':'▼ −'}${money(Math.abs(d))}</span>`}
 function dateLimits(){$('publicDate').max=today();if(state.publicDate>today())state.publicDate=today();$('publicDate').value=state.publicDate;$('publicDateLabel').textContent=formatDate(state.publicDate);$('effectiveDate').min='2020-01-01';$('effectiveDate').max=shiftDay(today(),366)}
-function renderPublic(){if(state.view!=='public')return;dateLimits();const selected=mostRecent(publicRows(),state.publicDate);const prior=selected?earlier(publicRows(),selected.effective_date):null;
-  $('heroMiniLabel').textContent='ราคาน้ำมันประจำวันที่';$('heroMiniDate').textContent=selected?formatDate(selected.effective_date):'—';
-  $('heroMiniDesc').textContent=selected?(selected.effective_date===state.publicDate?'ราคาจำหน่ายที่ประกาศใช้ในวันที่เลือก':'ใช้ราคาประกาศล่าสุดที่มีผลก่อนวันที่เลือก'):'ยังไม่มีประกาศราคาน้ำมัน';
+function renderPublic(){
+  if(state.view!=='public')return;
+  dateLimits();
+  const selected=mostRecent(publicRows(),state.publicDate);
+  const prior=selected?earlier(publicRows(),selected.effective_date):null;
+  $('heroMiniLabel').textContent='ราคาน้ำมัน / EV ณ วันที่';
+  $('heroMiniDate').textContent=selected?formatDate(selected.effective_date):'—';
+  $('heroMiniDesc').textContent=selected?(selected.effective_date===state.publicDate?'ราคาประกาศที่มีผลในวันที่เลือก':'ราคาประกาศล่าสุดก่อนวันที่เลือก'):'ยังไม่มีประกาศราคา';
   $('lastUpdated').textContent=selected?`ประกาศเมื่อ ${formatDateTime(selected.published_at)}`:'ยังไม่มีประกาศราคา';
-  $('publicPrices').innerHTML=selected?FUELS.filter(f=>selected.prices[f.id]!=null).map(f=>`<article class="price-card"><div class="price-row"><div class="fuel-info"><div class="pump" style="--f-color:${f.color}">${pump}</div><div><div class="fuel-name">${f.name}</div><div class="fuel-code">${f.code}</div></div></div><span class="pill grey">฿/L</span></div><div class="price-value">${money(selected.prices[f.id])} <small>บาท/ลิตร</small></div><div class="price-foot"><span>เทียบประกาศก่อนหน้า</span>${differenceHtml(selected.prices[f.id],prior?.prices?.[f.id])}</div></article>`).join(''):'<div class="card empty" style="grid-column:1/-1">ยังไม่มีประกาศราคาน้ำมันสำหรับวันที่เลือก กรุณาสอบถามทางสถานีก่อนเติมน้ำมัน</div>';
-  const fuel=$('calcFuel').value;$('calcFuel').innerHTML=selected?FUELS.filter(f=>selected.prices[f.id]!=null).map(f=>`<option value="${f.id}">${f.name}</option>`).join(''):'';if(fuel&&[...$('calcFuel').options].some(o=>o.value===fuel))$('calcFuel').value=fuel;
+  $('publicPrices').innerHTML=selected?PRODUCTS.map(item=>{
+    const current=selected.prices?.[item.id];
+    const old=prior?.prices?.[item.id];
+    const available=current!=null;
+    return `<article class="price-card${isEv(item)?' ev-card':''}">
+      <div class="price-row"><div class="fuel-info"><div class="pump${isEv(item)?' ev':''}" style="--f-color:${item.color}">${productIcon(item)}</div><div><div class="fuel-name">${item.name}</div><div class="fuel-code">${item.code}</div></div></div><span class="pill grey">${unitShort(item)}</span></div>
+      <div class="price-compare"><div><span class="label">ราคาเดิม</span><strong>${priceText(old)}</strong></div><div><span class="label">ราคาใหม่</span><strong>${priceText(current)}</strong></div></div>
+      <div class="price-foot"><span>${available?'ส่วนต่างจากประกาศก่อนหน้า':'ยังไม่ประกาศราคา'}</span>${available?differenceHtml(current,old):'<span class="delta flat">—</span>'}</div>
+    </article>`;
+  }).join(''):'<div class="card empty" style="grid-column:1/-1">ยังไม่มีประกาศราคาน้ำมันและ EV สำหรับวันที่เลือก กรุณาสอบถามสถานีโดยตรง</div>';
+  $('comparePeriod').textContent=selected?`ราคาใหม่ ณ ${formatDate(selected.effective_date)} · ราคาเดิม${prior?' ณ '+formatDate(prior.effective_date):'ยังไม่มีประกาศก่อนหน้า'}`:'รอการประกาศราคา';
+  $('publicComparison').innerHTML=selected?PRODUCTS.map(item=>{
+    const current=selected.prices?.[item.id],old=prior?.prices?.[item.id];
+    return `<tr><td><span class="product-name">${item.name}</span><span class="product-unit">${unitText(item)}</span></td><td>${priceText(old)}</td><td>${current==null?'<span class="muted">ยังไม่ประกาศ</span>':priceText(current)}</td><td>${current==null?'—':differenceHtml(current,old)}</td></tr>`;
+  }).join(''):'<tr><td colspan="4" class="empty">ยังไม่มีราคาที่ประกาศ</td></tr>';
+  const fuel=$('calcFuel').value;
+  $('calcFuel').innerHTML=selected?FUELS.filter(item=>selected.prices?.[item.id]!=null).map(item=>`<option value="${item.id}">${item.name}</option>`).join(''):'';
+  if(fuel&&[...$('calcFuel').options].some(o=>o.value===fuel))$('calcFuel').value=fuel;
   calculate();renderChart();renderPublicHistory();
 }
 function calculate(){const row=mostRecent(publicRows(),state.publicDate),price=row?.prices?.[$('calcFuel').value],amount=Number($('calcAmount').value);$('calcLiters').textContent=Number.isFinite(amount)&&amount>0&&Number(price)>0?money(amount/Number(price)):'—'}
-function renderPublicHistory(){const results=publicRows().filter(r=>r.effective_date<=state.publicDate).slice().sort((a,b)=>b.effective_date.localeCompare(a.effective_date)).slice(0,15);$('publicHistory').innerHTML=results.length?results.map(r=>`<tr><td><strong>${formatDate(r.effective_date)}</strong></td><td>${FUELS.filter(f=>r.prices[f.id]!=null).map(f=>`${f.name} ${money(r.prices[f.id])}`).join(' · ')}</td><td>${formatDateTime(r.published_at)}</td></tr>`).join(''):'<tr><td colspan="3" class="empty">ยังไม่มีข้อมูลย้อนหลัง</td></tr>'}
+function renderPublicHistory(){const results=publicRows().filter(r=>r.effective_date<=state.publicDate).slice().sort((a,b)=>b.effective_date.localeCompare(a.effective_date)).slice(0,15);$('publicHistory').innerHTML=results.length?results.map(r=>`<tr><td><strong>${formatDate(r.effective_date)}</strong></td><td>${PRODUCTS.filter(f=>r.prices[f.id]!=null).map(f=>`${f.name} ${money(r.prices[f.id])} ${unitShort(f)}`).join(' · ')}</td><td>${formatDateTime(r.published_at)}</td></tr>`).join(''):'<tr><td colspan="3" class="empty">ยังไม่มีข้อมูลย้อนหลัง</td></tr>'}
 function renderChart(){const target=$('chartWrap'),days=Array.from({length:7},(_,i)=>shiftDay(state.publicDate,i-6)),entries=days.map(day=>mostRecent(publicRows(),day));const current=mostRecent(publicRows(),state.publicDate);if(!current){target.innerHTML='<div class="empty">ยังไม่มีข้อมูลกราฟ</div>';$('chartLegend').innerHTML='';return}
  const fuels=FUELS.filter(f=>['diesel','b20','g95','g91','e20'].includes(f.id)&&current.prices[f.id]!=null),values=entries.flatMap(r=>fuels.map(f=>r?.prices?.[f.id]).filter(v=>v!=null));if(!values.length){target.innerHTML='<div class="empty">ยังไม่มีข้อมูลย้อนหลัง</div>';return}
  const min=Math.max(0,Math.floor(Math.min(...values)-3)),max=Math.ceil(Math.max(...values)+3),W=680,H=230,L=43,R=13,T=12,B=41,w=W-L-R,h=H-T-B,x=i=>L+i*w/6,y=v=>T+(max-v)*h/(max-min||1);let svg=`<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="กราฟราคาน้ำมันย้อนหลัง 7 วัน">`;
  for(let i=0;i<5;i++){const value=min+(max-min)*i/4;svg+=`<line x1="${L}" x2="${W-R}" y1="${y(value)}" y2="${y(value)}" stroke="#eeeaf0"/><text x="${L-9}" y="${y(value)+4}" font-size="11" fill="#918995" text-anchor="end">${value.toFixed(0)}</text>`}days.forEach((d,i)=>svg+=`<text x="${x(i)}" y="${H-12}" font-size="11" fill="#918995" text-anchor="middle">${d.slice(8)}/${d.slice(5,7)}</text>`);
  for(const f of fuels){let path='',started=false;const points=entries.map((r,i)=>r?.prices?.[f.id]!=null?{x:x(i),y:y(r.prices[f.id])}:null);for(const p of points){if(!p){started=false;continue}path+=`${started?' L':' M'}${p.x.toFixed(1)} ${p.y.toFixed(1)}`;started=true}svg+=`<path d="${path}" fill="none" stroke="${f.color}" stroke-width="2.5" stroke-linecap="round"/>`;for(const p of points.filter(Boolean))svg+=`<circle cx="${p.x}" cy="${p.y}" r="3" fill="${f.color}" stroke="#fff" stroke-width="1.5"/>`}target.innerHTML=svg+'</svg>';$('chartLegend').innerHTML=fuels.map(f=>`<span><i style="background:${f.color}"></i>${f.name}</span>`).join('')}
-function editor(){const draft=state.drafts.find(r=>r.effective_date===state.managerDate),published=exact(state.managerDate),prior=earlier(state.publications,state.managerDate),base=draft||published||prior;state.version=published?.version||0;$('effectiveDate').value=state.managerDate;$('editState').textContent=draft?'มีร่างที่ยังไม่ประกาศ':published?'ประกาศแล้ว · แก้ไขได้':'ยังไม่ประกาศ';$('staffDateStatus').textContent=published?'ประกาศแล้ว':'ยังไม่ประกาศ';$('staffSelectedDate').textContent=formatDate(state.managerDate);$('staffCurrentSummary').textContent=published?`ประกาศเวอร์ชัน ${published.version} เมื่อ ${formatDateTime(published.published_at)}${draft?' · มีร่างใหม่':''}`:draft?'บันทึกร่างแล้ว ยังไม่แสดงแก่ลูกค้า':'กรอกราคาเพื่อเริ่มประกาศ';$('priceNote').value=draft?.note??published?.note??'';
- $('editRows').innerHTML=FUELS.map(f=>`<tr><td><div class="fuel-info"><span class="pump" style="--f-color:${f.color}">${pump}</span><div><div class="fuel-name">${f.name}</div><div class="fuel-code">${f.code}</div></div></div></td><td><input data-fuel="${f.id}" inputmode="decimal" type="text" maxlength="6" placeholder="ไม่จำหน่าย" value="${base?.prices?.[f.id]??''}" aria-label="ราคาน้ำมัน ${f.name}"></td><td><span data-diff="${f.id}">${base?.prices?.[f.id]!=null?differenceHtml(base.prices[f.id],prior?.prices?.[f.id]):'<span class="delta flat">ไม่จำหน่าย</span>'}</span></td></tr>`).join('');$('editRows').querySelectorAll('[data-fuel]').forEach(el=>el.addEventListener('input',()=>{state.dirty=true;updateDiffs()}));state.dirty=false;
+function priceBaseline(){
+  // When editing an already published date, compare with that publication.
+  // For a new date compare against the latest effective publication before it.
+  return exact(state.managerDate)||earlier(state.publications,state.managerDate);
 }
-function updateDiffs(){const prior=earlier(state.publications,state.managerDate);for(const input of $('editRows').querySelectorAll('[data-fuel]')){const id=input.dataset.fuel;document.querySelector(`[data-diff="${id}"]`).innerHTML=input.value.trim()&&Number.isFinite(Number(input.value))?differenceHtml(Number(input.value),prior?.prices?.[id]):'<span class="delta flat">—</span>'}}
-function renderAudit(){const logs=state.audit.slice(0,50);$('auditItems').innerHTML=logs.length?logs.map(r=>{const changes=FUELS.filter(f=>r.old_prices?.[f.id]!==r.new_prices?.[f.id]);const desc=changes.map(f=>`${f.name} ${r.old_prices?.[f.id]==null?'—':money(r.old_prices[f.id])} → ${r.new_prices?.[f.id]==null?'—':money(r.new_prices[f.id])}`).join(' · ');return `<article class="audit-item"><div class="audit-head"><strong>${formatDate(r.effective_date)} · v${r.publication_version}</strong><span class="muted small">${formatDateTime(r.changed_at)}</span></div><p>${esc(desc||'ปรับหมายเหตุ')}</p></article>`}).join(''):'<div class="empty">ยังไม่มีประวัติ</div>'}
-function renderManager(){if(state.view!=='manager')return;if(!state.manager){switchView('public');return}$('staffIdentity').textContent=state.user?.email||'แอดมิน';$('staffRole').textContent='สิทธิ์แอดมิน (2 บัญชี) · แก้ไขและประกาศได้';$('heroMiniLabel').textContent='วันที่กำลังแก้ไข';$('heroMiniDate').textContent=formatDate(state.managerDate);$('heroMiniDesc').textContent='เฉพาะบัญชีแอดมิน';editor();renderAudit();renderMarketAdvisor()}
+function editor(){
+  const draft=state.drafts.find(r=>r.effective_date===state.managerDate);
+  const published=exact(state.managerDate);
+  const prior=earlier(state.publications,state.managerDate);
+  const base=draft||published||prior;
+  const baseline=priceBaseline();
+  state.version=published?.version||0;
+  $('effectiveDate').value=state.managerDate;
+  $('editState').textContent=draft?'มีร่างที่ยังไม่ประกาศ':published?'ประกาศแล้ว · แก้ไขได้':'ยังไม่ประกาศ';
+  $('staffDateStatus').textContent=published?'ประกาศแล้ว':'ยังไม่ประกาศ';
+  $('staffSelectedDate').textContent=formatDate(state.managerDate);
+  $('staffCurrentSummary').textContent=published?`ประกาศเวอร์ชัน ${published.version} เมื่อ ${formatDateTime(published.published_at)}${draft?' · มีร่างใหม่':''}`:draft?'บันทึกร่างแล้ว ยังไม่แสดงแก่ลูกค้า':'กรอกราคาเพื่อเริ่มประกาศ';
+  $('priceNote').value=draft?.note??published?.note??'';
+  $('editRows').innerHTML=PRODUCTS.map(item=>{
+    const old=baseline?.prices?.[item.id],value=base?.prices?.[item.id];
+    return `<tr><td><div class="fuel-info"><span class="pump${isEv(item)?' ev':''}" style="--f-color:${item.color}">${productIcon(item)}</span><div><div class="fuel-name">${item.name}</div><div class="fuel-code">${unitText(item)}</div></div></div></td>
+    <td>${priceText(old)}</td><td><input data-fuel="${item.id}" data-unit="${unitText(item)}" inputmode="decimal" type="text" maxlength="6" placeholder="ยังไม่ตั้ง" value="${value??''}" aria-label="ราคาใหม่ ${productLabel(item)}"></td>
+    <td><span data-diff="${item.id}">${value!=null?differenceHtml(value,old):'<span class="delta flat">—</span>'}</span></td></tr>`;
+  }).join('');
+  $('editRows').querySelectorAll('[data-fuel]').forEach(el=>el.addEventListener('input',()=>{state.dirty=true;updateDiffs()}));
+  state.dirty=false;
+}
+function updateDiffs(){
+  const baseline=priceBaseline();
+  for(const input of $('editRows').querySelectorAll('[data-fuel]')){
+    const id=input.dataset.fuel;
+    const valid=validPriceString(input.value);
+    document.querySelector(`[data-diff="${id}"]`).innerHTML=valid?differenceHtml(Number(input.value),baseline?.prices?.[id]):'<span class="delta flat">—</span>';
+  }
+}
+function renderAudit(){const logs=state.audit.slice(0,50);$('auditItems').innerHTML=logs.length?logs.map(r=>{const changes=PRODUCTS.filter(f=>r.old_prices?.[f.id]!==r.new_prices?.[f.id]);const desc=changes.map(f=>`${f.name} ${r.old_prices?.[f.id]==null?'—':money(r.old_prices[f.id])} → ${r.new_prices?.[f.id]==null?'—':money(r.new_prices[f.id])} ${unitShort(f)}`).join(' · ');return `<article class="audit-item"><div class="audit-head"><strong>${formatDate(r.effective_date)} · v${r.publication_version}</strong><span class="muted small">${formatDateTime(r.changed_at)}</span></div><p>${esc(desc||'ปรับหมายเหตุ')}</p></article>`}).join(''):'<div class="empty">ยังไม่มีประวัติ</div>'}
+function renderManager(){if(state.view!=='manager')return;if(!state.manager){switchView('public');return}$('staffIdentity').textContent=state.user?.email||'แอดมิน';$('staffRole').textContent='สิทธิ์แอดมิน (2 บัญชี) · แก้ไขและประกาศได้';$('heroMiniLabel').textContent='วันที่กำลังแก้ไขราคาน้ำมัน / EV';$('heroMiniDate').textContent=formatDate(state.managerDate);$('heroMiniDesc').textContent='เฉพาะบัญชีแอดมิน';editor();renderAudit();renderMarketAdvisor();renderEvAdvisor()}
 function formPrices(){const fields={};$('editRows').querySelectorAll('[data-fuel]').forEach(e=>fields[e.dataset.fuel]=e.value);return validatePrices(fields)}
 async function saveDraft(){if(state.busy||!state.manager)return;try{const prices=formPrices(),note=$('priceNote').value.trim();setBusy(true);check(await state.db.from('price_drafts').upsert({effective_date:state.managerDate,prices,note},{onConflict:'effective_date'}));state.dirty=false;await loadData();notify('บันทึกร่างเรียบร้อยแล้ว ยังไม่เผยแพร่แก่ลูกค้า')}catch(e){notify('บันทึกร่างไม่สำเร็จ: '+message(e))}finally{setBusy(false)}}
-async function publish(){if(state.busy||!state.manager)return;let prices;try{prices=formPrices()}catch(e){notify(message(e));return}const note=$('priceNote').value.trim();if(!confirm(`ยืนยันประกาศราคา SpeedGo\nวันที่มีผล: ${formatDate(state.managerDate)}\nประเภทน้ำมัน: ${Object.keys(prices).length} รายการ\n\n${state.managerDate>today()?'กำหนดราคาล่วงหน้า ลูกค้าจะเห็นเมื่อถึงวันที่มีผล':'ประกาศให้ลูกค้าเห็นในหน้าเว็บเมื่อมีผล'}\n\nยืนยันว่าตรวจสอบราคาถูกต้องแล้ว?`))return;
+async function publish(){if(state.busy||!state.manager)return;let prices;try{prices=formPrices()}catch(e){notify(message(e));return}const note=$('priceNote').value.trim();if(!confirm(`ยืนยันประกาศราคา SpeedGo\nวันที่มีผล: ${formatDate(state.managerDate)}\nสินค้า: ${Object.keys(prices).length} รายการ (น้ำมัน/EV)\n\n${state.managerDate>today()?'กำหนดราคาล่วงหน้า ลูกค้าจะเห็นเมื่อถึงวันที่มีผล':'ประกาศให้ลูกค้าเห็นในหน้าเว็บเมื่อมีผล'}\n\nยืนยันว่าตรวจสอบราคาถูกต้องแล้ว?`))return;
  try{setBusy(true);check(await state.db.rpc('publish_prices',{p_effective_date:state.managerDate,p_prices:prices,p_note:note,p_expected_version:state.version}));state.dirty=false;await loadData();notify('ประกาศราคาเรียบร้อยแล้ว พร้อมบันทึกประวัติ')}catch(e){notify('ประกาศไม่สำเร็จ: '+message(e))}finally{setBusy(false)}}
 async function loadData(){
   const request=++state.requestId;
@@ -261,13 +380,16 @@ async function loadData(){
   const audit=state.manager?state.db.from('price_audit').select('effective_date,old_prices,new_prices,publication_version,changed_at').order('changed_at',{ascending:false}).limit(100):Promise.resolve({data:[],error:null});
   const market=state.manager?state.db.from('market_snapshots').select('*').order('fetched_at',{ascending:false}).limit(1):Promise.resolve({data:[],error:null});
   const rules=state.manager?state.db.from('price_cost_rules').select('*').order('fuel_id'):Promise.resolve({data:[],error:null});
-  const result=await Promise.all([pub,draft,audit,market,rules]);
+  const evRules=state.manager?state.db.from('ev_cost_rules').select('*').order('product_id'):Promise.resolve({data:[],error:null});
+  const result=await Promise.all([pub,draft,audit,market,rules,evRules]);
   if(request!==state.requestId)return;
   state.publications=check(result[0])||[];
   state.drafts=check(result[1])||[];
   state.audit=check(result[2])||[];
   state.marketError=result[3].error||result[4].error?'ยังไม่ได้ติดตั้ง 003_market_advisor.sql หรือไม่มีสิทธิ์อ่านข้อมูลตลาด':'';
   if(!state.marketError){state.marketSnapshot=result[3].data?.[0]||null;state.marketRules=result[4].data||[]}
+  state.evError=result[5].error?'ยังไม่ได้ติดตั้ง SQL 008 หรือไม่มีสิทธิ์อ่านต้นทุน EV':'';
+  state.evRules=state.evError?[]:result[5].data||[];
   showError('');
   if(state.view==='manager')renderManager();else renderPublic();
 }
@@ -356,12 +478,77 @@ function applyMarketPrices(){
   notify('คัดลอกราคาแนะนำเข้าตารางแล้ว กรุณาตรวจสอบก่อนบันทึกร่างหรือประกาศ');
 }
 
+// PEA EV: independent cost model in THB/kWh; never depends on Brent / FX.
+function evSuggestion(item){
+  const r=state.evRules.find(x=>x.product_id===item.id);
+  if(!r)return null;
+  const p=Number(r.energy_cost)+Number(r.operating_cost)+Number(r.target_margin);
+  if(!Number.isFinite(p)||p<0.01||p>200)return null;
+  const price=Math.round(p*100)/100;
+  const current=mostRecent(state.publications,state.managerDate)?.prices?.[item.id];
+  return {item,price,previous:current==null?null:Number(current)};
+}
+function renderEvAdvisor(){
+  if(state.view!=='manager'||!state.manager)return;
+  if(!state.evRulesDirty){
+    $('evRules').innerHTML=EV_PRODUCTS.map(item=>{
+      const r=state.evRules.find(x=>x.product_id===item.id);
+      const v=(key,def='')=>r?.[key]??def;
+      return `<div class="rule-card" data-ev-rule="${item.id}"><div class="rule-header">⚡ ${item.name}</div>
+      <div class="rule-fields">
+        <div class="field"><label>ต้นทุนพลังงาน (บาท/kWh)</label><input class="control" type="number" inputmode="decimal" min="0.01" max="190" step="0.01" data-param="energy_cost" value="${v('energy_cost')}"></div>
+        <div class="field"><label>ค่าใช้จ่ายเพิ่ม (บาท/kWh)</label><input class="control" type="number" inputmode="decimal" min="0" max="100" step="0.01" data-param="operating_cost" value="${v('operating_cost',0)}"></div>
+        <div class="field"><label>กำไรเป้าหมาย (บาท/kWh)</label><input class="control" type="number" inputmode="decimal" min="0" max="100" step="0.01" data-param="target_margin" value="${v('target_margin',0)}"></div>
+      </div><div class="market-rulebase">${r?'แก้ไขล่าสุด '+formatDateTime(r.updated_at):'ยังไม่บันทึกต้นทุน EV'}</div></div>`;
+    }).join('');
+    $('evSaveState').textContent=state.evError||'กรอกต้นทุนจริงเฉพาะช่วงเวลาที่ต้องการคำนวณ';
+  }
+  const suggestions=EV_PRODUCTS.map(evSuggestion).filter(Boolean);
+  $('evSuggestions').innerHTML=suggestions.length?suggestions.map(x=>`<tr><td>${x.item.name}</td><td><strong>${money(x.price)}</strong></td><td>${x.previous==null?'ยังไม่มีราคาเดิม':differenceHtml(x.price,x.previous)}</td></tr>`).join(''):'<tr><td colspan="3" class="muted">กรอกต้นทุน EV แล้วกดบันทึก เพื่อดูราคาแนะนำหน่วยบาท/kWh</td></tr>';
+  $('applyEvBtn').disabled=!!state.evError||state.evRulesDirty||!suggestions.length;
+  $('saveEvRulesBtn').disabled=!!state.evError;
+}
+async function saveEvRules(){
+  if(!state.manager||state.busy||state.evError)return;
+  const items=[];
+  try{
+    for(const el of $('evRules').querySelectorAll('[data-ev-rule]')){
+      const value=param=>el.querySelector(`[data-param="${param}"]`).value.trim();
+      const energy=value('energy_cost');
+      if(!energy)continue;
+      const operating=value('operating_cost'),margin=value('target_margin');
+      if(!rulesValidNumber(energy,0.01,190)||!rulesValidNumber(operating,0,100)||!rulesValidNumber(margin,0,100)){
+        throw new Error('กรุณาตรวจสอบต้นทุน EV ของ '+el.dataset.evRule);
+      }
+      items.push({product_id:el.dataset.evRule,energy_cost:Number(energy),operating_cost:Number(operating),target_margin:Number(margin)});
+    }
+    if(!items.length){notify('กรุณากรอกต้นทุนพลังงาน EV อย่างน้อย 1 ช่วงเวลา');return}
+    if(!confirm(`บันทึกสูตรต้นทุน EV ${items.length} ช่วงเวลา?\nยังไม่เปลี่ยนราคาที่ลูกค้าเห็น`))return;
+    setBusy(true);
+    const saved=check(await state.db.from('ev_cost_rules').upsert(items,{onConflict:'product_id'}).select('*'));
+    state.evRules=[...state.evRules.filter(row=>!saved.some(x=>x.product_id===row.product_id)),...saved];
+    state.evRulesDirty=false;renderEvAdvisor();notify('บันทึกต้นทุน PEA EV เรียบร้อยแล้ว ยังไม่ได้ประกาศราคา');
+  }catch(err){notify('บันทึกต้นทุน EV ไม่สำเร็จ: '+message(err))}
+  finally{setBusy(false)}
+}
+function applyEvPrices(){
+  const suggestions=EV_PRODUCTS.map(evSuggestion).filter(Boolean);
+  if(!suggestions.length||state.evRulesDirty){notify('กรุณาบันทึกต้นทุน EV ก่อน');return}
+  if(!confirm(`นำราคา EV แนะนำ ${suggestions.length} ช่วงเวลาไปวางในตารางแก้ไข?\nยังไม่บันทึกหรือประกาศราคา`))return;
+  for(const x of suggestions){
+    const input=$('editRows').querySelector(`[data-fuel="${x.item.id}"]`);
+    if(input)input.value=x.price.toFixed(2);
+  }
+  state.dirty=true;updateDiffs();
+  $('editRows').scrollIntoView({behavior:'smooth',block:'center'});
+  notify('คัดลอกราคา EV แล้ว กรุณาตรวจสอบและบันทึกร่างหรือประกาศด้วยตนเอง');
+}
 function switchView(view){if(!requireDiscard())return;if(view==='manager'){if(!state.db){notify('ยังไม่ได้เชื่อมต่อฐานข้อมูล');return}if(!state.manager){$('loginOverlay').classList.remove('hide');$('loginEmail').focus();return}}
- state.view=view;state.dirty=false;state.rulesDirty=false;$('staffView').classList.toggle('hide',view!=='manager');$('publicView').classList.toggle('hide',view!=='public');$('staffMode').classList.toggle('active',view==='manager');$('publicMode').classList.toggle('active',view==='public');$('signoutBtn').classList.toggle('hide',view!=='manager');$('heroTitle').innerHTML=view==='manager'?'จัดการราคาน้ำมัน<br>สำหรับแอดมิน SpeedGo':'ราคาน้ำมัน SpeedGo<br>วันนี้';$('heroDesc').textContent=view==='manager'?'แอดมินทั้ง 2 บัญชีแก้ไขและประกาศราคาได้โดยตรง โดยไม่มีระบบสาขา':'เช็กราคาน้ำมันล่าสุดจากสถานีบริการ SpeedGo อัปเดตตามประกาศราคา เพื่อช่วยให้คุณวางแผนการเติมน้ำมันได้สะดวกยิ่งขึ้น';if(view==='manager')renderManager();else renderPublic();window.scrollTo({top:0,behavior:'smooth'})}
+ state.view=view;state.dirty=false;state.rulesDirty=false;state.evRulesDirty=false;$('staffView').classList.toggle('hide',view!=='manager');$('publicView').classList.toggle('hide',view!=='public');$('staffMode').classList.toggle('active',view==='manager');$('publicMode').classList.toggle('active',view==='public');$('signoutBtn').classList.toggle('hide',view!=='manager');$('heroTitle').innerHTML=view==='manager'?'จัดการราคาน้ำมันและ EV<br>สำหรับแอดมิน SpeedGo':'ราคาน้ำมันและ EV SpeedGo<br>วันนี้';$('heroDesc').textContent=view==='manager'?'แอดมินทั้ง 2 บัญชีแก้ไขและประกาศราคาได้โดยตรง โดยไม่มีระบบสาขา':'เช็กราคาน้ำมันและบริการชาร์จ PEA EV พร้อมเทียบราคาเดิม ราคาใหม่ และส่วนต่างขึ้นลงตามประกาศที่มีผลจริง';if(view==='manager')renderManager();else renderPublic();window.scrollTo({top:0,behavior:'smooth'})}
 async function login(event){event.preventDefault();if(state.busy)return;$('loginError').textContent='';try{setBusy(true);const auth=check(await state.db.auth.signInWithPassword({email:$('loginEmail').value.trim(),password:$('loginPassword').value}));state.user=auth.user;state.manager=check(await state.db.rpc('is_manager'))===true;if(!state.manager){await state.db.auth.signOut();state.user=null;throw new Error('บัญชีนี้ไม่ได้รับสิทธิ์แอดมิน')}state.dirty=false;$('loginPassword').value='';$('loginOverlay').classList.add('hide');await loadData();switchView('manager')}catch(e){$('loginError').textContent=message(e)}finally{setBusy(false)}}
-async function logout(){if(!requireDiscard())return;try{setBusy(true);check(await state.db.auth.signOut());state.user=null;state.manager=false;state.drafts=[];state.audit=[];state.dirty=false;state.view='public';$('staffView').classList.add('hide');$('publicView').classList.remove('hide');$('staffMode').classList.remove('active');$('publicMode').classList.add('active');$('signoutBtn').classList.add('hide');$('heroTitle').innerHTML='ราคาน้ำมัน SpeedGo<br>วันนี้';await loadData();notify('ออกจากระบบเรียบร้อย')}catch(e){notify(message(e))}finally{setBusy(false)}}
+async function logout(){if(!requireDiscard())return;try{setBusy(true);check(await state.db.auth.signOut());state.user=null;state.manager=false;state.drafts=[];state.audit=[];state.dirty=false;state.view='public';$('staffView').classList.add('hide');$('publicView').classList.remove('hide');$('staffMode').classList.remove('active');$('publicMode').classList.add('active');$('signoutBtn').classList.add('hide');$('heroTitle').innerHTML='ราคาน้ำมันและ EV SpeedGo<br>วันนี้';await loadData();notify('ออกจากระบบเรียบร้อย')}catch(e){notify(message(e))}finally{setBusy(false)}}
 let refreshing=false;async function refresh(){if(!state.ready||!state.db||state.view!=='public'||refreshing)return;refreshing=true;try{await loadData()}catch(e){showError('ไม่สามารถอัปเดตราคาล่าสุด: '+message(e))}finally{refreshing=false}}
-function events(){$('refreshMarketBtn').addEventListener('click',refreshWorldMarket);$('saveRulesBtn').addEventListener('click',()=>saveMarketRules(false));$('rebaseRulesBtn').addEventListener('click',()=>saveMarketRules(true));$('applyMarketBtn').addEventListener('click',applyMarketPrices);$('marketRules').addEventListener('input',()=>{state.rulesDirty=true;$('ruleSaveState').textContent='มีต้นทุนที่ยังไม่บันทึก'});$('publicMode').addEventListener('click',()=>switchView('public'));$('staffMode').addEventListener('click',()=>switchView('manager'));$('publicDate').addEventListener('change',e=>{state.publicDate=e.target.value&&e.target.value<=today()?e.target.value:today();renderPublic()});$('effectiveDate').addEventListener('change',e=>{if(!requireDiscard()){e.target.value=state.managerDate;return}const val=e.target.value;if(!val||val<'2020-01-01'||val>shiftDay(today(),366)){notify('วันที่อยู่นอกช่วงที่อนุญาต');e.target.value=state.managerDate;return}state.managerDate=val;renderManager()});$('calcAmount').addEventListener('input',calculate);$('calcFuel').addEventListener('change',calculate);$('priceNote').addEventListener('input',()=>state.dirty=true);$('saveDraftBtn').addEventListener('click',saveDraft);$('publishBtn').addEventListener('click',publish);$('copyPreviousBtn').addEventListener('click',()=>{const row=earlier(state.publications,state.managerDate);if(!row){notify('ยังไม่มีราคาก่อนหน้า');return}for(const fuel of FUELS)$('editRows').querySelector(`[data-fuel="${fuel.id}"]`).value=row.prices[fuel.id]??'';state.dirty=true;updateDiffs();notify('คัดลอกราคาก่อนหน้าแล้ว กรุณาตรวจสอบก่อนประกาศ')});$('previewBtn').addEventListener('click',()=>switchView('public'));$('signoutBtn').addEventListener('click',logout);$('signoutInlineBtn').addEventListener('click',logout);$('loginForm').addEventListener('submit',login);$('closeLoginBtn').addEventListener('click',()=>$('loginOverlay').classList.add('hide'));$('loginOverlay').addEventListener('click',e=>{if(e.target===$('loginOverlay'))$('loginOverlay').classList.add('hide')});window.addEventListener('beforeunload',e=>{if(state.dirty||state.rulesDirty){e.preventDefault();e.returnValue=''}});window.addEventListener('focus',refresh);document.addEventListener('visibilitychange',()=>{if(!document.hidden)refresh()});setInterval(()=>{if(!document.hidden)refresh()},30000)}
+function events(){$('evRules').addEventListener('input',()=>{state.evRulesDirty=true;$('evSaveState').textContent='มีต้นทุน EV ที่ยังไม่บันทึก';$('applyEvBtn').disabled=true});$('saveEvRulesBtn').addEventListener('click',saveEvRules);$('applyEvBtn').addEventListener('click',applyEvPrices);$('refreshMarketBtn').addEventListener('click',refreshWorldMarket);$('saveRulesBtn').addEventListener('click',()=>saveMarketRules(false));$('rebaseRulesBtn').addEventListener('click',()=>saveMarketRules(true));$('applyMarketBtn').addEventListener('click',applyMarketPrices);$('marketRules').addEventListener('input',()=>{state.rulesDirty=true;$('ruleSaveState').textContent='มีต้นทุนที่ยังไม่บันทึก'});$('publicMode').addEventListener('click',()=>switchView('public'));$('staffMode').addEventListener('click',()=>switchView('manager'));$('publicDate').addEventListener('change',e=>{state.publicDate=e.target.value&&e.target.value<=today()?e.target.value:today();renderPublic()});$('effectiveDate').addEventListener('change',e=>{if(!requireDiscard()){e.target.value=state.managerDate;return}const val=e.target.value;if(!val||val<'2020-01-01'||val>shiftDay(today(),366)){notify('วันที่อยู่นอกช่วงที่อนุญาต');e.target.value=state.managerDate;return}state.managerDate=val;renderManager()});$('calcAmount').addEventListener('input',calculate);$('calcFuel').addEventListener('change',calculate);$('priceNote').addEventListener('input',()=>state.dirty=true);$('saveDraftBtn').addEventListener('click',saveDraft);$('publishBtn').addEventListener('click',publish);$('copyPreviousBtn').addEventListener('click',()=>{const row=earlier(state.publications,state.managerDate);if(!row){notify('ยังไม่มีราคาก่อนหน้า');return}for(const item of PRODUCTS)$('editRows').querySelector(`[data-fuel="${item.id}"]`).value=row.prices[item.id]??'';state.dirty=true;updateDiffs();notify('คัดลอกราคาก่อนหน้าแล้ว กรุณาตรวจสอบก่อนประกาศ')});$('previewBtn').addEventListener('click',()=>switchView('public'));$('signoutBtn').addEventListener('click',logout);$('signoutInlineBtn').addEventListener('click',logout);$('loginForm').addEventListener('submit',login);$('closeLoginBtn').addEventListener('click',()=>$('loginOverlay').classList.add('hide'));$('loginOverlay').addEventListener('click',e=>{if(e.target===$('loginOverlay'))$('loginOverlay').classList.add('hide')});window.addEventListener('beforeunload',e=>{if(state.dirty||state.rulesDirty||state.evRulesDirty){e.preventDefault();e.returnValue=''}});window.addEventListener('focus',refresh);document.addEventListener('visibilitychange',()=>{if(!document.hidden)refresh()});setInterval(()=>{if(!document.hidden)refresh()},30000)}
 async function start(){events();dateLimits();const url=window.SPEEDGO_CONFIG?.url,key=window.SPEEDGO_CONFIG?.publishableKey;
  if(!url||!key||/YOUR-PROJECT|YOUR_KEY/.test(url+' '+key)||!/^https:\/\//.test(url)){showError('ยังไม่ตั้งค่า Supabase: กรุณาใส่ Project URL และ Publishable Key ในไฟล์ config.js ก่อนเปิดใช้งานจริง');$('publicPrices').innerHTML='<div class="card empty" style="grid-column:1/-1">ระบบยังไม่ได้เชื่อมต่อฐานข้อมูลจริง</div>';$('staffMode').disabled=true;return}
  try{setBusy(true);state.db=createClient(url,key,{auth:{persistSession:true,autoRefreshToken:true,detectSessionInUrl:true}});const userRes=await state.db.auth.getUser();state.user=userRes.error?null:userRes.data?.user||null;state.manager=state.user?check(await state.db.rpc('is_manager'))===true:false;await loadData();state.ready=true;state.db.auth.onAuthStateChange(event=>{if(event==='SIGNED_OUT'&&state.user){state.user=null;state.manager=false;state.dirty=false;state.view='public';$('staffView').classList.add('hide');$('publicView').classList.remove('hide');$('staffMode').classList.remove('active');$('publicMode').classList.add('active');$('signoutBtn').classList.add('hide');renderPublic()}})}catch(e){showError('โหลดข้อมูลออนไลน์ไม่สำเร็จ: '+message(e));$('publicPrices').innerHTML='<div class="card empty" style="grid-column:1/-1">ไม่สามารถโหลดข้อมูลราคาจากเซิร์ฟเวอร์ได้</div>'}finally{setBusy(false)}}
